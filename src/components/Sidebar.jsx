@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { User, BookOpen, Briefcase, Languages, Star, Users } from "lucide-react";
+import { User, BookOpen, Briefcase, Languages, Star, Users, BookText } from "lucide-react";
 
 const Sidebar = () => {
   const items = [
     { label: "Personal Info", icon: <User size={20} />, path: "/builder/personal-info" },
+    { label: "About me", icon: <BookText size={20} />, path: "/builder/aboutme" },
     { label: "Education", icon: <BookOpen size={20} />, path: "/builder/education" },
     { label: "Work Experience", icon: <Briefcase size={20} />, path: "/builder/work-experience" },
     { label: "Language", icon: <Languages size={20} />, path: "/builder/language" },
