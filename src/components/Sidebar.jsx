@@ -22,8 +22,8 @@ const Sidebar = () => {
 
   return (
     <aside className="w-[320px] bg-white border-r border-gray-200 h-screen flex flex-col p-6">
-      <div className="mb-6">
-        <h2 className="text-lg font-semibold text-gray-800 leading-tight">
+      <div className="flex flex-col gap-2 p-5 border-b border-[#DEE0E3]">
+        <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
           Select to fill details
         </h2>
         <p className="text-sm text-gray-500">
@@ -31,22 +31,22 @@ const Sidebar = () => {
         </p>
       </div>
 
-      <nav className="grid grid-cols-2 gap-4">
+
+      <nav className="grid grid-cols-2 pt-2">
         {items.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `flex flex-col justify-center items-center gap-2 rounded-xl border transition-all
+              `flex flex-col justify-center items-center rounded-xl gap-2 transition-all
                w-[136px] h-[98px] text-center text-sm font-medium
-               ${isActive
-                ? "bg-blue-100 border-blue-400 text-blue-700 shadow-sm"
-                : "bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700"
+               ${isActive ? "active-gradient text-blue-800" :
+                "hover:bg-gray-100 border-gray-200 text-gray-700"
               }`
             }
           >
             {item.icon}
-            <span>{item.label}</span>
+            <span className="heading-primary">{item.label}</span>
           </NavLink>
         ))}
       </nav>

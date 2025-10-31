@@ -8,7 +8,9 @@ import "./resumeBuilder.css";
 export default function ResumeBuilder() {
   return (
     <div className="rb-root">
-      <header className="rb-header">Resume builder</header>
+      <header className="flex items-center justify-between px-6 py-6 bg-white border-b border-gray-200 text-gray-900 font-semibold text-lg">
+        Resume Builder
+      </header>
 
       <div className="rb-container">
         <Sidebar />

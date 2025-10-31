@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Root styles */
 :root {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
@@ -16,11 +20,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Tailwind base reset */
 #root {
   width: 100%;
   height: 100%;
 }
 
+/* Default element styles */
 a {
   font-weight: 500;
   color: #646cff;
@@ -78,4 +84,29 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@layer components {
+  .heading-primary {
+    @apply text-[14px] font-normal leading-[100%] text-center text-gray-800;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0;
+  }
+
+  .paragraph-secondary {
+    @apply text-sm text-gray-500;
+  }
+
+  .button-primary {
+    @apply px-4 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700;
+  }
+}
+
+
+.active-gradient {
+  background: linear-gradient(114.83deg, rgba(0,49,139,0) 59.35%, rgba(0,49,139,0.1) 97.24%);
+  border-image-source: linear-gradient(183.89deg, rgba(0,49,139,0) 74.46%, rgba(0,49,139,0.2) 85.38%, #00318B 97.5%, rgba(0,49,139,0.2) 106.12%, rgba(0,49,139,0) 115.07%);
+  border-image-slice: 1;
+  border-bottom-width: 2px;
+  opacity: 1;
 }
