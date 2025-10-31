@@ -1,21 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { User, BookOpen, Briefcase, Languages, Star, Users, BookText } from "lucide-react";
+
+import PersonalInfoIcon from "../assets/personalinfo.svg?react";
+import AboutMeIcon from "../assets/aboutme.svg?react";
+import EducationIcon from "../assets/education.svg?react";
+import LanguageIcon from "../assets/language.svg?react";
+import WorkExperienceIcon from "../assets/workexperience.svg?react";
+import AreasofExpertiseIcon from "../assets/areasofexpertise.svg?react";
+import ReferencesIcon from "../assets/references.svg?react";
 
 const Sidebar = () => {
   const items = [
-    { label: "Personal Info", icon: <User size={20} />, path: "/builder/personal-info" },
-    { label: "About me", icon: <BookText size={20} />, path: "/builder/aboutme" },
-    { label: "Education", icon: <BookOpen size={20} />, path: "/builder/education" },
-    { label: "Work Experience", icon: <Briefcase size={20} />, path: "/builder/work-experience" },
-    { label: "Language", icon: <Languages size={20} />, path: "/builder/language" },
-    { label: "Areas of Expertise", icon: <Star size={20} />, path: "/builder/areas-of-expertise" },
-    { label: "References", icon: <Users size={20} />, path: "/builder/references" },
+    { label: "Personal Info", icon: <PersonalInfoIcon className="w-5 h-5" />, path: "/builder/personal-info" },
+    { label: "About me", icon: <AboutMeIcon className="w-5 h-5" />, path: "/builder/aboutme" },
+    { label: "Education", icon: <EducationIcon className="w-5 h-5" />, path: "/builder/education" },
+    { label: "Language", icon: <LanguageIcon className="w-5 h-5" />, path: "/builder/language" },
+    { label: "Work Experience", icon: <WorkExperienceIcon className="w-5 h-5" />, path: "/builder/work-experience" },
+    { label: "Areas of Expertise", icon: <AreasofExpertiseIcon className="w-5 h-5" />, path: "/builder/areas-of-expertise" },
+    { label: "References", icon: <ReferencesIcon className="w-5 h-5" />, path: "/builder/references" },
   ];
 
   return (
     <aside className="w-[320px] bg-white border-r border-gray-200 h-screen flex flex-col p-6">
-      {/* Headings */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-800 leading-tight">
           Select to fill details
