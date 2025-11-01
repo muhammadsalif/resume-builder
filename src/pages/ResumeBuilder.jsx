@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import Rightbar from "../components/Rightbar";
 import PersonalInfoForm from "../features/personal-info/PersonalInfoForm";
 import TemplatePreview from "../components/TemplatePreview";
 import "./resumeBuilder.css";
@@ -12,10 +13,10 @@ export default function ResumeBuilder() {
         Resume Builder
       </header>
 
-      <div className="rb-container">
+      <div className="rb-container flex h-screen">
         <Sidebar />
 
-        <div className="rb-center">
+        <div className="rb-center flex-1 min-w-0 bg-gray-50">
           <div className="rb-card">
             <Routes>
               <Route path="personal-info" element={<PersonalInfoForm />} />
@@ -30,18 +31,7 @@ export default function ResumeBuilder() {
           </div>
         </div>
 
-        <aside className="rb-right">
-          <div className="rb-right-card">
-            <h4 className="small-title">Select your resumes</h4>
-            <TemplatePreview />
-            <div className="small-title" style={{ marginTop: 16 }}>Select template</div>
-            <div className="template-thumbs">
-              <div className="thumb active" />
-              <div className="thumb" />
-              <div className="thumb" />
-            </div>
-          </div>
-        </aside>
+        {/* <Rightbar /> */}
       </div>
     </div>
   );
