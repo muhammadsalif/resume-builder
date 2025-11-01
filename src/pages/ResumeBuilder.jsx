@@ -31,7 +31,7 @@ export default function ResumeBuilder() {
           </div>
         </div>
 
-        {/* <Rightbar /> */}
+        <Rightbar />
       </div>
     </div>
   );

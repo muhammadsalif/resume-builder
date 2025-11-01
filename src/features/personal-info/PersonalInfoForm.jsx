@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { User as UserCircleIcon } from "lucide-react";
-
+import Splitter from "../../components/Splitter";
 
 export default function PersonalInfoForm() {
   const [form, setForm] = useState({
@@ -105,89 +105,157 @@ export default function PersonalInfoForm() {
 
       {/* Form */}
       <form onSubmit={onNext} className="space-y-6">
-        {/* Two-column grid */}
+        {/* Full Name & Title */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            name="fullName"
-            value={form.fullName}
-            onChange={onChange}
-            placeholder="Full name *"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="title"
-            value={form.title}
-            onChange={onChange}
-            placeholder="Title *"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="email"
-            value={form.email}
-            onChange={onChange}
-            placeholder="Email address *"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="phone"
-            value={form.phone}
-            onChange={onChange}
-            placeholder="Phone number *"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Full name <span className="text-red-500">*</span>
+            </label>
+            <input
+              name="fullName"
+              value={form.fullName}
+              onChange={onChange}
+              placeholder="e.g John doe"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Title <span className="text-red-500">*</span>
+            </label>
+            <input
+              name="title"
+              value={form.title}
+              onChange={onChange}
+              placeholder="Placeholder"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
         </div>
 
-        {/* Full-width Address */}
-        <input
-          name="address"
-          value={form.address}
-          onChange={onChange}
-          placeholder="Address *"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-
-        {/* Two-column grid for links */}
+        {/* Email & Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            name="linkedin"
-            value={form.linkedin}
-            onChange={onChange}
-            placeholder="LinkedIn URL (optional)"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="indeed"
-            value={form.indeed}
-            onChange={onChange}
-            placeholder="Indeed URL (optional)"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="behance"
-            value={form.behance}
-            onChange={onChange}
-            placeholder="Behance URL (optional)"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            name="website"
-            value={form.website}
-            onChange={onChange}
-            placeholder="Website URL (optional)"
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Email address <span className="text-red-500">*</span>
+            </label>
+            <input
+              name="email"
+              value={form.email}
+              onChange={onChange}
+              type="email"
+              placeholder="e.g John doe"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Phone number <span className="text-red-500">*</span>
+            </label>
+            <input
+              name="phone"
+              value={form.phone}
+              onChange={onChange}
+              type="tel"
+              placeholder="e.g 00 000 0000"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
         </div>
 
-        {/* Button */}
+        {/* Address */}
+        <div className="flex flex-col">
+          <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+            Address <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            name="address"
+            value={form.address}
+            onChange={onChange}
+            placeholder="e.g Villa #1234, Stre... "
+            rows={3}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+        <Splitter className="my-4" />
+        
+        {/* LinkedIn & Indeed */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              LinkedIn URL (optional)
+            </label>
+            <input
+              name="linkedin"
+              value={form.linkedin}
+              onChange={onChange}
+              placeholder="www."
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Indeed URL (optional)
+            </label>
+            <input
+              name="indeed"
+              value={form.indeed}
+              onChange={onChange}
+              placeholder="www."
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Behance & Website */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Behance URL (optional)
+            </label>
+            <input
+              name="behance"
+              value={form.behance}
+              onChange={onChange}
+              placeholder="www."
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+              Website URL (optional)
+            </label>
+            <input
+              name="website"
+              value={form.website}
+              onChange={onChange}
+              placeholder="www."
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Next Button */}
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition"
+            disabled={!form.fullName || !form.title || !form.email || !form.phone || !form.address}
+            className={`px-6 py-2 text-sm font-medium rounded-lg transition 
+        ${form.fullName && form.title && form.email && form.phone && form.address
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
           >
             Next
           </button>
         </div>
       </form>
+
     </div>
   );
 }
