@@ -11,10 +11,8 @@ import ReferencesIcon from "../assets/references.svg?react";
 import TemplatePreview from "../components/TemplatePreview";
 
 const Rightbar = () => {
-
-
   return (
-    <aside class="hidden md:flex w-[320px] bg-white border-r border-gray-200 flex-col p-6">
+    <aside class="hidden md:flex bg-white border-r border-gray-200 flex-col p-6">
       <div className="flex flex-col gap-2 p-5 border-b border-[#DEE0E3]">
         <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
           Select your resumes
