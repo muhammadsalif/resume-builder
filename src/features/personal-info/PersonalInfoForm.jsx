@@ -98,7 +98,7 @@ export default function PersonalInfoForm() {
             <button
               type="button"
               onClick={onReset}
-              className="px-4 py-2 h-10 flex items-center justify-center text-sm font-medium bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
+              className="px-4 py-2 h-10 flex items-center justify-center text-sm font-medium bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition cursor-pointer"
             >
               Reset
             </button>

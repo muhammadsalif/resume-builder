@@ -2,16 +2,16 @@ import React from "react";
 import Leftbar from "../components/Leftbar";
 import Main from "../components/Main";
 import Rightbar from "../components/Rightbar";
+import Header from "../components/Header";
 import "./resumeBuilder.css";
 
 export default function ResumeBuilder() {
   return (
     <div className="min-h-[90vh] bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="px-6 py-4 bg-white border-b border-gray-200 text-gray-900 font-semibold text-lg">
-        Resume Builder
+      <header className="w-full px-6 py-4 bg-white border-b border-gray-200 flex items-center justify-between">
+        <Header />
       </header>
-
       {/* Main Container */}
       <div className="flex flex-col md:flex-row gap-4 p-4 flex-1">
         {/* Left Sidebar */}
