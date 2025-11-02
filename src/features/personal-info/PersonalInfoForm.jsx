@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { User as UserCircleIcon } from "lucide-react";
 import Splitter from "../../components/Splitter";
-import nextIcon from "../../assets/next.svg";
+import nextIconGray from "../../assets/next.svg";
+import nextIconWhite from "../../assets/nextwhite.svg";
 
 export default function PersonalInfoForm() {
   const [form, setForm] = useState({
@@ -251,26 +252,29 @@ export default function PersonalInfoForm() {
         <div className="flex justify-end">
           <button
             type="submit"
-            disabled={
-              !form.fullName ||
-              !form.title ||
-              !form.email ||
-              !form.phone ||
-              !form.address
-            }
-            className={`flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-lg transition 
-              focus:outline-none focus:ring-0 
-              ${form.fullName &&
+            disabled={!form.fullName || !form.title || !form.email || !form.phone || !form.address}
+            className={`flex items-center gap-2 focus:outline-none ${form.fullName &&
+              form.title &&
+              form.email &&
+              form.phone &&
+              form.address
+              ? "button-primary"
+              : "button-disabled"
+              }`}
+          >
+            Next
+            <img
+              src={form.fullName &&
                 form.title &&
                 form.email &&
                 form.phone &&
                 form.address
-                ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
-          >
-            Next
-            <img src={nextIcon} alt="Next" className="w-4 h-4" />
+                ? nextIconWhite
+                : nextIconGray
+              }
+              alt="Next"
+              className="w-4 h-4"
+            />
           </button>
         </div>
       </form>
