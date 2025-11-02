@@ -16,10 +16,10 @@ export default function TemplatePreview({ withData = true }) {
   ];
 
   return (
-    <div className="template-wrap min-h-screen p-6 md:p-10 flex justify-center">
-      <div className="template-card w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="template-wrap min-h-screen p-6 flex justify-center">
+      <div className="template-card shadow-lg w-full max-w-6xl grid grid-cols-1 md:grid-cols-2">
         {/* LEFT TEMPLATE (without / with data) */}
-        <div className="template-column relative overflow-hidden rounded-2xl bg-transparent">
+        <div className="template-column relative overflow-hidden bg-transparent">
           {/* Background shapes layered exactly */}
           <img src={blackShape} alt="" className="bg-blackshape" />
           <img src={orangeShape} alt="" className="bg-orangeshape" />
@@ -67,7 +67,7 @@ export default function TemplatePreview({ withData = true }) {
         </div>
 
         {/* RIGHT TEMPLATE (sheet) */}
-        <div className="sheet-column relative rounded-2xl bg-white shadow-lg overflow-hidden">
+        <div className="sheet-column relative bg-white overflow-hidden">
           {/* bottom-right orange corner shape */}
           <img src={rightOrange} alt="" className="sheet-bottom-corner" />
 

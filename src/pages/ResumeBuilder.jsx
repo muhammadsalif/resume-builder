@@ -1,9 +1,7 @@
 import React from "react";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import Main from "../components/Main";
 import Rightbar from "../components/Rightbar";
-import PersonalInfoForm from "../features/personal-info/PersonalInfoForm";
-import TemplatePreview from "../components/TemplatePreview";
 import "./resumeBuilder.css";
 
 export default function ResumeBuilder() {
@@ -14,24 +12,15 @@ export default function ResumeBuilder() {
       </header>
 
       <div className="rb-container flex h-screen">
-        <Sidebar />
-
+        <aside className="hidden md:flex w-[320px] bg-white border-r border-gray-200 flex-col p-6">
+          <Sidebar />
+        </aside>
         <div className="rb-center flex-1 min-w-0 bg-gray-50">
-          <div className="rb-card">
-            <Routes>
-              <Route path="personal-info" element={<PersonalInfoForm />} />
-              <Route path="aboutme" element={<div className="placeholder">About (placeholder)</div>} />
-              <Route path="education" element={<div className="placeholder">Education (placeholder)</div>} />
-              <Route path="language" element={<div className="placeholder">language (placeholder)</div>} />
-              <Route path="work-experience" element={<div className="placeholder">work-experience (placeholder)</div>} />
-              <Route path="areas-of-expertise" element={<div className="placeholder">areas-of-expertise (placeholder)</div>} />
-              <Route path="references" element={<div className="placeholder">references (placeholder)</div>} />
-              <Route path="*" element={<Navigate to="/builder/personal-info" replace />} />
-            </Routes>
-          </div>
+          <Main />
         </div>
-
-        <Rightbar />
+        <aside className="hidden md:flex bg-white border-r border-gray-200 flex-col p-6">
+          <Rightbar />
+        </aside>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { User as UserCircleIcon } from "lucide-react";
 import Splitter from "../../components/Splitter";
+import nextIcon from "../../assets/next.svg";
 
 export default function PersonalInfoForm() {
   const [form, setForm] = useState({
@@ -176,14 +177,14 @@ export default function PersonalInfoForm() {
             name="address"
             value={form.address}
             onChange={onChange}
-            placeholder="e.g Villa #1234, Stre... "
+            placeholder="e.g Villa #1234, Stre..."
             rows={3}
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
         <Splitter className="my-4" />
-        
+
         {/* LinkedIn & Indeed */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
@@ -244,14 +245,26 @@ export default function PersonalInfoForm() {
         <div className="flex justify-end">
           <button
             type="submit"
-            disabled={!form.fullName || !form.title || !form.email || !form.phone || !form.address}
-            className={`px-6 py-2 text-sm font-medium rounded-lg transition 
-        ${form.fullName && form.title && form.email && form.phone && form.address
+            disabled={
+              !form.fullName ||
+              !form.title ||
+              !form.email ||
+              !form.phone ||
+              !form.address
+            }
+            className={`flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-lg transition 
+      outline-none focus:outline-none focus:ring-0 
+      ${form.fullName &&
+                form.title &&
+                form.email &&
+                form.phone &&
+                form.address
                 ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300"
               }`}
           >
             Next
+            <img src={nextIcon} alt="" className="w-4 h-4" />
           </button>
         </div>
       </form>
