@@ -25,9 +25,7 @@ export default function PersonalInfoForm() {
 
   const onPhotoUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setPhoto(URL.createObjectURL(file));
-    }
+    if (file) setPhoto(URL.createObjectURL(file));
   };
 
   const onReset = () => {
@@ -53,8 +51,8 @@ export default function PersonalInfoForm() {
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6">
-        <div className="flex flex-col gap-2 p-5">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6 pb-4">
+        <div className="flex flex-col gap-1">
           <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
             Personal info
           </h2>
@@ -62,7 +60,7 @@ export default function PersonalInfoForm() {
         </div>
       </div>
 
-      {/* Upload section */}
+      {/* Upload Section */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-200 pb-4 mb-6">
         {/* Avatar */}
         <div className="relative w-20 h-20 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center overflow-hidden">
@@ -77,7 +75,7 @@ export default function PersonalInfoForm() {
           )}
         </div>
 
-        {/* Upload + Reset + Info */}
+        {/* Upload + Reset */}
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <label className="bg-blue-600 text-white text-sm font-medium px-4 py-2 h-10 flex items-center justify-center rounded-lg cursor-pointer hover:bg-blue-700 transition">
@@ -108,28 +106,36 @@ export default function PersonalInfoForm() {
         {/* Full Name & Title */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+            <label
+              htmlFor="fullName"
+              className="text-sm font-medium text-gray-700 mb-1"
+            >
               Full name <span className="text-red-500">*</span>
             </label>
             <input
+              id="fullName"
               name="fullName"
               value={form.fullName}
               onChange={onChange}
-              placeholder="e.g John doe"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="e.g John Doe"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
           <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+            <label
+              htmlFor="title"
+              className="text-sm font-medium text-gray-700 mb-1"
+            >
               Title <span className="text-red-500">*</span>
             </label>
             <input
+              id="title"
               name="title"
               value={form.title}
               onChange={onChange}
               placeholder="Placeholder"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -138,30 +144,38 @@ export default function PersonalInfoForm() {
         {/* Email & Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-700 mb-1"
+            >
               Email address <span className="text-red-500">*</span>
             </label>
             <input
+              id="email"
               name="email"
+              type="email"
               value={form.email}
               onChange={onChange}
-              type="email"
-              placeholder="e.g John doe"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="e.g john@email.com"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
           <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+            <label
+              htmlFor="phone"
+              className="text-sm font-medium text-gray-700 mb-1"
+            >
               Phone number <span className="text-red-500">*</span>
             </label>
             <input
+              id="phone"
               name="phone"
+              type="tel"
               value={form.phone}
               onChange={onChange}
-              type="tel"
-              placeholder="e.g 00 000 0000"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="e.g +1 234 567 890"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -169,75 +183,68 @@ export default function PersonalInfoForm() {
 
         {/* Address */}
         <div className="flex flex-col">
-          <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
+          <label
+            htmlFor="address"
+            className="text-sm font-medium text-gray-700 mb-1"
+          >
             Address <span className="text-red-500">*</span>
           </label>
           <textarea
+            id="address"
             name="address"
             value={form.address}
             onChange={onChange}
-            placeholder="e.g Villa #1234, Stre..."
+            placeholder="e.g 1234 Elm Street, Apt 2B"
             rows={3}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
             required
           />
         </div>
+
         <Splitter className="my-4" />
 
         {/* LinkedIn & Indeed */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
-              LinkedIn URL (optional)
-            </label>
-            <input
-              name="linkedin"
-              value={form.linkedin}
-              onChange={onChange}
-              placeholder="www."
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
-              Indeed URL (optional)
-            </label>
-            <input
-              name="indeed"
-              value={form.indeed}
-              onChange={onChange}
-              placeholder="www."
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+          {["linkedin", "indeed"].map((field) => (
+            <div key={field} className="flex flex-col">
+              <label
+                htmlFor={field}
+                className="text-sm font-medium text-gray-700 mb-1"
+              >
+                {field.charAt(0).toUpperCase() + field.slice(1)} URL (optional)
+              </label>
+              <input
+                id={field}
+                name={field}
+                value={form[field]}
+                onChange={onChange}
+                placeholder="www."
+                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Behance & Website */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
-              Behance URL (optional)
-            </label>
-            <input
-              name="behance"
-              value={form.behance}
-              onChange={onChange}
-              placeholder="www."
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="font-[Montserrat] text-[14px] font-medium leading-[20px] tracking-[-0.005em] text-gray-700 mb-1">
-              Website URL (optional)
-            </label>
-            <input
-              name="website"
-              value={form.website}
-              onChange={onChange}
-              placeholder="www."
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+          {["behance", "website"].map((field) => (
+            <div key={field} className="flex flex-col">
+              <label
+                htmlFor={field}
+                className="text-sm font-medium text-gray-700 mb-1"
+              >
+                {field.charAt(0).toUpperCase() + field.slice(1)} URL (optional)
+              </label>
+              <input
+                id={field}
+                name={field}
+                value={form[field]}
+                onChange={onChange}
+                placeholder="www."
+                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Next Button */}
@@ -252,22 +259,21 @@ export default function PersonalInfoForm() {
               !form.address
             }
             className={`flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-lg transition 
-      outline-none focus:outline-none focus:ring-0 
-      ${form.fullName &&
+              focus:outline-none focus:ring-0 
+              ${form.fullName &&
                 form.title &&
                 form.email &&
                 form.phone &&
                 form.address
                 ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
               }`}
           >
             Next
-            <img src={nextIcon} alt="" className="w-4 h-4" />
+            <img src={nextIcon} alt="Next" className="w-4 h-4" />
           </button>
         </div>
       </form>
-
     </div>
   );
 }
