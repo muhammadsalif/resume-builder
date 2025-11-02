@@ -9,7 +9,7 @@ import WorkExperienceIcon from "../assets/workexperience.svg?react";
 import AreasofExpertiseIcon from "../assets/areasofexpertise.svg?react";
 import ReferencesIcon from "../assets/references.svg?react";
 
-const Sidebar = () => {
+const Leftbar = () => {
   const items = [
     { label: "Personal Info", icon: <PersonalInfoIcon className="w-5 h-5" />, path: "/builder/personal-info" },
     { label: "About me", icon: <AboutMeIcon className="w-5 h-5" />, path: "/builder/aboutme" },
@@ -52,4 +52,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Leftbar;
