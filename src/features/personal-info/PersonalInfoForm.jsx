@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { User as UserCircleIcon } from "lucide-react";
 import Splitter from "../../components/Splitter";
 import nextIconGray from "../../assets/next.svg";
@@ -49,6 +49,13 @@ export default function PersonalInfoForm() {
     alert("Next Step (UI placeholder)");
   };
 
+  const isFormValid =
+    form.fullName &&
+    form.title &&
+    form.email &&
+    form.phone &&
+    form.address;
+
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
@@ -79,7 +86,7 @@ export default function PersonalInfoForm() {
         {/* Upload + Reset */}
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <label className="bg-blue-600 text-white text-sm font-medium px-4 py-2 h-10 flex items-center justify-center rounded-lg cursor-pointer hover:bg-blue-700 transition">
+            <label className="bg-[#00318B] text-white text-sm font-medium px-4 py-2 h-10 flex items-center justify-center rounded-lg cursor-pointer hover:bg-blue-900 transition">
               Upload your photo
               <input
                 type="file"
@@ -119,7 +126,7 @@ export default function PersonalInfoForm() {
               value={form.fullName}
               onChange={onChange}
               placeholder="e.g John Doe"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               required
             />
           </div>
@@ -136,7 +143,7 @@ export default function PersonalInfoForm() {
               value={form.title}
               onChange={onChange}
               placeholder="Placeholder"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               required
             />
           </div>
@@ -158,7 +165,7 @@ export default function PersonalInfoForm() {
               value={form.email}
               onChange={onChange}
               placeholder="e.g john@email.com"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               required
             />
           </div>
@@ -176,7 +183,7 @@ export default function PersonalInfoForm() {
               value={form.phone}
               onChange={onChange}
               placeholder="e.g +1 234 567 890"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               required
             />
           </div>
@@ -197,7 +204,7 @@ export default function PersonalInfoForm() {
             onChange={onChange}
             placeholder="e.g 1234 Elm Street, Apt 2B"
             rows={3}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:ring-2 focus:ring-[#00318B] focus:outline-none"
             required
           />
         </div>
@@ -220,7 +227,7 @@ export default function PersonalInfoForm() {
                 value={form[field]}
                 onChange={onChange}
                 placeholder="www."
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               />
             </div>
           ))}
@@ -242,7 +249,7 @@ export default function PersonalInfoForm() {
                 value={form[field]}
                 onChange={onChange}
                 placeholder="www."
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
               />
             </div>
           ))}
@@ -252,26 +259,15 @@ export default function PersonalInfoForm() {
         <div className="flex justify-end">
           <button
             type="submit"
-            disabled={!form.fullName || !form.title || !form.email || !form.phone || !form.address}
-            className={`flex items-center gap-2 focus:outline-none ${form.fullName &&
-              form.title &&
-              form.email &&
-              form.phone &&
-              form.address
-              ? "button-primary"
-              : "button-disabled"
+            disabled={!isFormValid}
+            className={`flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none ${isFormValid
+              ? "bg-[#00318B] text-white hover:bg-blue-900 cursor-pointer"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
               }`}
           >
             Next
             <img
-              src={form.fullName &&
-                form.title &&
-                form.email &&
-                form.phone &&
-                form.address
-                ? nextIconWhite
-                : nextIconGray
-              }
+              src={isFormValid ? nextIconWhite : nextIconGray}
               alt="Next"
               className="w-4 h-4"
             />
