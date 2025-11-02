@@ -51,11 +51,10 @@ export default function PersonalInfoForm() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-white p-6 rounded-lg">
+    <div className="flex flex-col w-full">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 pb-4 mb-6">
-
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6">
+        <div className="flex flex-col gap-2 p-5">
           <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
             Personal info
           </h2>
