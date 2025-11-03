@@ -1,9 +1,11 @@
+import React from "react"
 import blackShape from "../assets/blackshape.svg";
 import orangeShape from "../assets/orangeshape.svg";
 import avatarPlaceholder from "../assets/avatarbg.svg";
-import ContactMeIcon from "../assets/contactme.svg";
-import ReferencesResume from "../assets/referencesresume.svg";
-import SocialLink from "../assets/sociallink.svg";
+
+import ContactMeIcon from "../assets/contactme.svg?react";
+import ReferencesResume from "../assets/referencesresume.svg?react";
+import SocialLink from "../assets/sociallink.svg?react";
 
 import "./templatePreview.css";
 
@@ -17,10 +19,10 @@ export default function TemplatePreview({ withData = true }) {
   ];
 
   const items = [
-    { label: "Contact Me", icon: <ContactMeIcon className="w-5 h-5" />, path: "/builder/references" },
-    { label: "References", icon: <ReferencesResume className="w-5 h-5" />, path: "/builder/references" },
-    { label: "Social link", icon: <SocialLink className="w-5 h-5" />, path: "/builder/references" },
-  ]
+    { label: "Contact Me", icon: <ContactMeIcon className="w-3 h-3" /> },
+    { label: "References", icon: <ReferencesResume className="w-3 h-3" /> },
+    { label: "Social link", icon: <SocialLink className="w-3 h-3" /> },
+  ];
 
   return (
     <div className="template-wrap flex justify-center pt-6">
@@ -53,33 +55,40 @@ export default function TemplatePreview({ withData = true }) {
 
             {/* Timeline */}
             <div className="rail-items relative">
-              {/* Faint vertical line */}
               <div className="timeline-line" />
 
-              {/* Labels beside line */}
               <div className="rail-list space-y-8">
                 {items.map((item, i) => (
-                  <div key={i} className="rail-item flex items-start gap-3">
-                    {/* {item.icon} */}
-                    {/* <div className="rail-icon">{item.icon}</div> */}
-                    <div className="rail-text">{item.label}</div>
+                  <div key={i} className="rail-item flex items-center gap-3 relative">
+                    {/* Orange dot */}
+                    <div className="w-2 h-4 bg-orange-500 rounded-full flex-shrink-0" />
+
+                    {/* Icon */}
+                    <div className="w-4 h-4 sm:w-4 sm:h-4 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center overflow-hidden hover:bg-gray-300 transition">
+                      {item.icon}
+                    </div>
+
+                    {/* Label */}
+                    <h3 className="text-[10px] font-bold leading-[100%] text-white-800 font-inter">
+                      {item.label}
+                    </h3>
                   </div>
                 ))}
+
               </div>
 
               {/* Orange dots */}
-              <div className="timeline-dots">
+              {/* <div className="timeline-dots">
                 {Array.from({ length: 10 }).map((_, i) => (
                   <div key={i} className="timeline-dot" />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* ===== RIGHT PANEL ===== */}
         <div className="sheet-column relative bg-white overflow-hidden">
-          {/* Bottom-right orange corner shape */}
           <img src={orangeShape} alt="" className="sheet-bottom-corner" />
 
           <div className="sheet-content relative z-10 p-6 md:p-10">
@@ -89,20 +98,17 @@ export default function TemplatePreview({ withData = true }) {
             </header>
 
             {sections.map((s) => (
-              <section key={s.title} className="mb-6">
+              <section key={s.title} className="mb-6 min-h-[60px]">
                 <h4 className="flex items-center gap-3 text-gray-800 font-semibold mb-2">
                   <span className="w-3 h-3 rounded-full bg-orange-500 inline-block" />
                   {s.title}
                 </h4>
+
                 <div className="text-sm text-gray-600">
                   {withData ? (
-                    <p>
-                      {s.title === "About me"
-                        ? "Creative and detail-oriented product designer passionate about crafting user-centered digital experiences."
-                        : `${s.title} — example content (dates / description).`}
-                    </p>
+                    <p>Actual content here...</p>
                   ) : (
-                    <p className="text-gray-300">--</p>
+                    <p className="text-gray-300">&nbsp;</p>
                   )}
                 </div>
               </section>
