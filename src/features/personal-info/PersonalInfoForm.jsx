@@ -59,7 +59,7 @@ export default function PersonalInfoForm() {
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6 pb-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6 pb-5">
         <div className="flex flex-col gap-1">
           <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
             Personal info
@@ -69,7 +69,7 @@ export default function PersonalInfoForm() {
       </div>
 
       {/* Upload Section */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-200 pb-4 mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-200 pb-5 mb-6">
         {/* Avatar */}
         <div className="relative w-20 h-20 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center overflow-hidden">
           {photo ? (

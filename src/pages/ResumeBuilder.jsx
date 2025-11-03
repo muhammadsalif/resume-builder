@@ -15,7 +15,7 @@ export default function ResumeBuilder() {
       {/* Main Container */}
       <div className="flex flex-col md:flex-row gap-4 p-4 flex-1">
         {/* Left Sidebar */}
-        <aside className="hidden md:flex w-[320px] bg-white border border-gray-200 rounded-xl flex-col p-6 shadow-sm">
+        <aside className="hidden md:flex bg-white border border-gray-200 rounded-xl flex-col p-6 shadow-sm">
           <Leftbar />
         </aside>
 
@@ -25,7 +25,7 @@ export default function ResumeBuilder() {
         </main>
 
         {/* Right Sidebar */}
-        <aside className="hidden md:flex w-[320px] bg-white border border-gray-200 rounded-xl flex-col p-6 shadow-sm">
+        <aside className="hidden md:flex w-[405px] bg-white border border-gray-200 rounded-xl flex-col shadow-sm">
           <Rightbar />
         </aside>
       </div>

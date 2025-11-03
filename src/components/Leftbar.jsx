@@ -22,7 +22,7 @@ const Leftbar = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2 p-5 border-b border-[#DEE0E3]">
+      <div className="flex flex-col gap-2 pb-5 border-b border-[#DEE0E3]">
         <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
           Select to fill details
         </h2>
@@ -37,7 +37,7 @@ const Leftbar = () => {
             to={item.path}
             className={({ isActive }) =>
               `flex flex-col justify-center items-center rounded-xl gap-2 transition-all
-               w-[136px] h-[98px] text-center text-sm font-medium
+                h-[98px] text-center text-sm font-medium
                ${isActive ? "active-gradient text-blue-800" :
                 "hover:bg-gray-100 border-gray-200 text-gray-700"
               }`
