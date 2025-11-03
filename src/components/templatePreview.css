@@ -24,11 +24,6 @@
   transform-origin: top left;
 }
 
-/* left rail content sits above shapes */
-.left-rail {
-  min-height: 420px;
-}
-
 /* avatar circle */
 .avatar-circle {
   width: 96px;

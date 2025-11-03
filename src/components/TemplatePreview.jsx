@@ -1,5 +1,5 @@
 import React from "react"
-import blackShape from "../assets/blackshape.svg";
+// import blackShape from "../assets/blackshape.svg";
 import orangeShape from "../assets/orangeshape.svg";
 import avatarPlaceholder from "../assets/avatarbg.svg";
 
@@ -41,11 +41,11 @@ export default function TemplatePreview({ withData = true }) {
         {/* ===== LEFT PANEL ===== */}
         <div className="template-column relative overflow-hidden bg-transparent">
           {/* Background layers */}
-          <img src={blackShape} alt="" className="bg-blackshape" />
+          {/* <img src={blackShape} alt="" className="bg-blackshape" /> */}
           <img src={orangeShape} alt="" className="bg-orangeshape" />
 
           {/* Left rail content */}
-          <div className="left-rail relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8">
+          <div className="bg-black relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8">
             {/* Avatar */}
             <div className="avatar-wrap mb-6">
               <div className="avatar-circle">

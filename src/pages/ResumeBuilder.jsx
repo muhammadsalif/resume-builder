@@ -25,7 +25,7 @@ export default function ResumeBuilder() {
         </main>
 
         {/* Right Sidebar */}
-        <aside className="hidden md:flex w-[420px] bg-white border border-gray-200 rounded-xl flex-col shadow-sm">
+        <aside className="hidden md:flex bg-white border border-gray-200 rounded-xl flex-col shadow-sm">
           <Rightbar />
         </aside>
       </div>
