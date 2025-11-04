@@ -1,4 +1,5 @@
 import TemplatePreview from "../components/TemplatePreview";
+import Templates from "../components/Templates";
 
 const Rightbar = () => {
   return (
@@ -12,6 +13,7 @@ const Rightbar = () => {
         </p>
       </div>
       <TemplatePreview />
+      <Templates />
     </div>
   );
 };
