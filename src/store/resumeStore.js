@@ -1,23 +1,54 @@
-import { create } from "zustand";
+import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
-export const useResumeStore = create((set) => ({
+const initialState = {
   personalInfo: {
     fullName: "",
     title: "",
     email: "",
     phone: "",
-    location: "",
-    photo: ""
+    address: "",
+    linkedin: "",
+    indeed: "",
+    behance: "",
+    website: "",
+    photo: null
   },
   about: "",
-  education: [],
   workExperience: [],
-  expertise: [],
+  education: [],
   languages: [],
-  references: [],
-  setPersonalInfo: (payload) => set({ personalInfo: { ...payload } }),
-  setAbout: (text) => set({ about: text }),
-  setEducation: (arr) => set({ education: arr }),
-  setWorkExperience: (arr) => set({ workExperience: arr }),
-  // add more setters as needed
-}));
+  expertise: []
+};
+
+export const useResumeStore = create()(
+  persist(
+    (set) => ({
+      ...initialState,
+      
+      setPersonalInfo: (data) => 
+        set((state) => ({
+          personalInfo: {
+            ...state.personalInfo,
+            ...data
+          }
+        })),
+        
+      setPhoto: (photoUrl) =>
+        set((state) => ({
+          personalInfo: {
+            ...state.personalInfo,
+            photo: photoUrl
+          }
+        })),
+
+      setAbout: (text) => set({ about: text }),
+      
+      reset: () => set(initialState)
+    }),
+    {
+      name: 'resume-storage',
+      storage: createJSONStorage(() => localStorage)
+    }
+  )
+);

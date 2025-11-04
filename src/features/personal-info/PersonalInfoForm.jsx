@@ -1,27 +1,17 @@
-import { useState } from "react";
 import { User as UserCircleIcon } from "lucide-react";
 import Splitter from "../../components/Splitter";
 import nextIconGray from "../../assets/next.svg";
 import nextIconWhite from "../../assets/nextwhite.svg";
+import { useResumeStore } from "../../store/resumeStore";
 
 export default function PersonalInfoForm() {
-  const [form, setForm] = useState({
-    fullName: "",
-    title: "",
-    email: "",
-    phone: "",
-    address: "",
-    linkedin: "",
-    indeed: "",
-    behance: "",
-    website: "",
-  });
-
-  const [photo, setPhoto] = useState(null);
+  const personalInfo = useResumeStore((state) => state.personalInfo);
+  const setPersonalInfo = useResumeStore((state) => state.setPersonalInfo);
+  const setPhoto = useResumeStore((state) => state.setPhoto);
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setPersonalInfo({ [name]: value });
   };
 
   const onPhotoUpload = (e) => {
@@ -30,7 +20,7 @@ export default function PersonalInfoForm() {
   };
 
   const onReset = () => {
-    setForm({
+    setPersonalInfo({
       fullName: "",
       title: "",
       email: "",
@@ -50,11 +40,11 @@ export default function PersonalInfoForm() {
   };
 
   const isFormValid =
-    form.fullName &&
-    form.title &&
-    form.email &&
-    form.phone &&
-    form.address;
+    personalInfo.fullName &&
+    personalInfo.title &&
+    personalInfo.email &&
+    personalInfo.phone &&
+    personalInfo.address;
 
   return (
     <div className="flex flex-col w-full">
@@ -72,9 +62,9 @@ export default function PersonalInfoForm() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-200 pb-5 mb-6">
         {/* Avatar */}
         <div className="relative w-20 h-20 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center overflow-hidden">
-          {photo ? (
+          {personalInfo.photo ? (
             <img
-              src={photo}
+              src={personalInfo.photo}
               alt="Uploaded"
               className="w-full h-full object-cover rounded-full"
             />
@@ -123,7 +113,7 @@ export default function PersonalInfoForm() {
             <input
               id="fullName"
               name="fullName"
-              value={form.fullName}
+              value={personalInfo.fullName}
               onChange={onChange}
               placeholder="e.g John Doe"
               className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
@@ -140,7 +130,7 @@ export default function PersonalInfoForm() {
             <input
               id="title"
               name="title"
-              value={form.title}
+              value={personalInfo.title}
               onChange={onChange}
               placeholder="Placeholder"
               className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
@@ -162,7 +152,7 @@ export default function PersonalInfoForm() {
               id="email"
               name="email"
               type="email"
-              value={form.email}
+              value={personalInfo.email}
               onChange={onChange}
               placeholder="e.g john@email.com"
               className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
@@ -180,7 +170,7 @@ export default function PersonalInfoForm() {
               id="phone"
               name="phone"
               type="tel"
-              value={form.phone}
+              value={personalInfo.phone}
               onChange={onChange}
               placeholder="e.g +1 234 567 890"
               className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
@@ -200,7 +190,7 @@ export default function PersonalInfoForm() {
           <textarea
             id="address"
             name="address"
-            value={form.address}
+            value={personalInfo.address}
             onChange={onChange}
             placeholder="e.g 1234 Elm Street, Apt 2B"
             rows={3}
@@ -224,7 +214,7 @@ export default function PersonalInfoForm() {
               <input
                 id={field}
                 name={field}
-                value={form[field]}
+                value={personalInfo[field]}
                 onChange={onChange}
                 placeholder="www."
                 className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
@@ -246,7 +236,7 @@ export default function PersonalInfoForm() {
               <input
                 id={field}
                 name={field}
-                value={form[field]}
+                value={personalInfo[field]}
                 onChange={onChange}
                 placeholder="www."
                 className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"

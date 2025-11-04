@@ -1,6 +1,10 @@
 import Dot from "./Dot";
+import { useResumeStore } from "../store/resumeStore";
 
-const RightPanel = () => {
+function RightPanel() {
+  const personalInfo = useResumeStore((state) => state.personalInfo);
+  const about = useResumeStore((state) => state.about);
+  
   const sections = [
     { title: "About me" },
     { title: "Work Experience" },
@@ -17,10 +21,10 @@ const RightPanel = () => {
         <div className="avatar-wrap mb-6">
           <div className="flex flex-col items-start">
             <h3 className="text-[18px] sm:text-[24px] font-bold text-black font-inter leading-tight">
-              Bob Brains
+              {personalInfo.fullName || "Full Name"}
             </h3>
             <p className="text-[10px] sm:text-[14px] text-gray-600 font-inter mt-1">
-              UI/UX Designer
+              {personalInfo.title || "Your Title"}
             </p>
           </div>
         </div>
@@ -42,7 +46,7 @@ const RightPanel = () => {
                 <div className="relative flex flex-col gap-4 mt-1 w-[190px]">
                   {s.title === "About me" ? (
                     <p className="font-inter font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">
-                      Creative and detail-oriented product designer passionate about crafting user-centered digital experiences that blend functionality with aesthetics.
+                      {about || "Add your professional summary here"}
                     </p>
                   ) : s.title === "Work Experience" ? (
                     <div className="flex flex-col gap-4">
