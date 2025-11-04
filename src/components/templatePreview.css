@@ -34,11 +34,6 @@
   overflow: hidden;
 }
 
-/* timeline / dotted orange vertical */
-.rail-items {
-  position: relative;
-}
-
 /* vertical line close to center between rail and sheet */
 .timeline-line {
   position: absolute;
