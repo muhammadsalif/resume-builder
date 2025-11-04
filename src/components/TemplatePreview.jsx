@@ -1,8 +1,4 @@
-import React from "react"
-// import blackShape from "../assets/blackshape.svg";
-import orangeShape from "../assets/orangeshape.svg";
 import avatarPlaceholder from "../assets/avatarbg.svg";
-
 import ContactMeIcon from "../assets/contactme.svg?react";
 import ReferencesResume from "../assets/referencesresume.svg?react";
 import SocialLinkIcon from "../assets/sociallink.svg?react";
@@ -10,10 +6,9 @@ import DottedDivider from "../components/DottedDivider";
 import ContactMe from "../components/ContactMe";
 import References from "../components/References";
 import SocialLink from "../components/SocialLink";
-
 import "./templatePreview.css";
 
-export default function TemplatePreview({ withData = true }) {
+export default function TemplatePreview() {
   const sections = [
     { title: "About me" },
     { title: "Work Experience" },
@@ -121,11 +116,7 @@ export default function TemplatePreview({ withData = true }) {
                     <div className="ml-[10px] w-[190px] opacity-100">
                       {s.title === "About me" ? (
                         <p className="font-inter font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1]">
-                          I’m a passionate UI/UX Designer with a strong focus on creating
-                          intuitive, user-centered experiences. My work blends creativity
-                          and functionality — ensuring every design decision improves
-                          usability and visual appeal. I enjoy transforming complex ideas
-                          into seamless, meaningful interfaces that connect with users.
+                          Creative and detail-oriented product designer passionate about crafting user-centered digital experiences that blend functionality with aesthetics.
                         </p>
                       ) : (
                         <p className="text-gray-300">&nbsp;</p>
