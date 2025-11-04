@@ -1,3 +1,5 @@
+import Dot from "./Dot";
+
 const RightPanel = () => {
   const sections = [
     { title: "About me" },
@@ -30,7 +32,7 @@ const RightPanel = () => {
               <div key={i} className="rail-item flex flex-col gap-1 relative">
                 {/* Orange stretched dot + Title */}
                 <div className="flex items-center gap-1">
-                  <div className="w-1 h-6 bg-orange-500 rounded-full flex-shrink-0" />
+                  <Dot className="w-1 h-6 flex-shrink-0" />
                   <h3 className="text-[10px] font-bold leading-[100%] text-black font-inter">
                     {s.title}
                   </h3>
@@ -45,41 +47,53 @@ const RightPanel = () => {
                   ) : s.title === "Work Experience" ? (
                     <div className="space-y-3">
                       {/* First work item */}
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="text-[10px] font-bold text-black">UI/UX Designer</p>
-                          <p className="text-[10px] text-gray-600">Manager</p>
-                          <p className="text-[10px] text-gray-600">Associate manager</p>
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div className="flex flex-1 justify-between items-start">
+                          <div>
+                            <p className="text-[10px] font-bold text-black">UI/UX Designer</p>
+                            <p className="text-[10px] text-gray-600">Manager</p>
+                            <p className="text-[10px] text-gray-600">Associate manager</p>
+                          </div>
+                          <div className="text-[10px] text-gray-600">12/10/2018 - 12/10/2020</div>
                         </div>
-                        <div className="text-[10px] text-gray-600">12/10/2018 - 12/10/2020</div>
                       </div>
 
                       {/* Second work item */}
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="text-[10px] font-bold text-black">Graphic Designer</p>
-                          <p className="text-[10px] text-gray-600">Creative Market / Chicago</p>
-                          <p className="text-[10px] text-gray-600">Manager</p>
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div className="flex flex-1 justify-between items-start">
+                          <div>
+                            <p className="text-[10px] font-bold text-black">Graphic Designer</p>
+                            <p className="text-[10px] text-gray-600">Creative Market / Chicago</p>
+                            <p className="text-[10px] text-gray-600">Manager</p>
+                          </div>
+                          <div className="text-[10px] text-gray-600">12/10/2020 - 12/10/2024</div>
                         </div>
-                        <div className="text-[10px] text-gray-600">12/10/2020 - 12/10/2024</div>
                       </div>
                     </div>
                   ) : s.title === "Education" ? (
                     <div className="space-y-3">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="text-[10px] font-bold text-black">Oxford university</p>
-                          <p className="text-[10px] text-gray-600">Masters - Computer science</p>
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div className="flex flex-1 justify-between items-start">
+                          <div>
+                            <p className="text-[10px] font-bold text-black">Oxford university</p>
+                            <p className="text-[10px] text-gray-600">Masters - Computer science</p>
+                          </div>
+                          <div className="text-[10px] text-gray-600">2021</div>
                         </div>
-                        <div className="text-[10px] text-gray-600">2021</div>
                       </div>
 
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="text-[10px] font-bold text-black">Oxford university</p>
-                          <p className="text-[10px] text-gray-600">PHD - Computer science</p>
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div className="flex flex-1 justify-between items-start">
+                          <div>
+                            <p className="text-[10px] font-bold text-black">Oxford university</p>
+                            <p className="text-[10px] text-gray-600">PHD - Computer science</p>
+                          </div>
+                          <div className="text-[10px] text-gray-600">2023</div>
                         </div>
-                        <div className="text-[10px] text-gray-600">2023</div>
                       </div>
                     </div>
                   ) : s.title === "Areas of expertise" ? (
@@ -87,21 +101,26 @@ const RightPanel = () => {
                       Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.
                     </p>
                   ) : s.title === "Language" ? (
-                    <div className="text-[10px] text-gray-700 space-y-1">
-                      <div>
-                        <p className="font-bold text-[10px]">English</p>
-                        <p className="text-[10px] text-gray-600">Fluent</p>
+                    <div className="text-[10px] text-gray-700 space-y-3">
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div>
+                          <p className="font-bold text-[10px]">English</p>
+                          <p className="text-[10px] text-gray-600">Fluent</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-[10px]">Spanish</p>
-                        <p className="text-[10px] text-gray-600">Excellent</p>
+                      <div className="flex items-start gap-1">
+                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                        <div>
+                          <p className="font-bold text-[10px]">Spanish</p>
+                          <p className="text-[10px] text-gray-600">Excellent</p>
+                        </div>
                       </div>
                     </div>
                   ) : (
                     <p className="text-gray-300">&nbsp;</p>
                   )}
                 </div>
-
               </div>
             ))}
           </div>
