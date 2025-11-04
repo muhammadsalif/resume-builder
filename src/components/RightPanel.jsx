@@ -42,6 +42,61 @@ const RightPanel = () => {
                     <p className="font-inter font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1]">
                       Creative and detail-oriented product designer passionate about crafting user-centered digital experiences that blend functionality with aesthetics.
                     </p>
+                  ) : s.title === "Work Experience" ? (
+                    <div className="space-y-3">
+                      {/* First work item */}
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="text-[10px] font-bold text-black">UI/UX Designer</p>
+                          <p className="text-[10px] text-gray-600">Manager</p>
+                          <p className="text-[10px] text-gray-600">Associate manager</p>
+                        </div>
+                        <div className="text-[10px] text-gray-600">12/10/2018 - 12/10/2020</div>
+                      </div>
+
+                      {/* Second work item */}
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="text-[10px] font-bold text-black">Graphic Designer</p>
+                          <p className="text-[10px] text-gray-600">Creative Market / Chicago</p>
+                          <p className="text-[10px] text-gray-600">Manager</p>
+                        </div>
+                        <div className="text-[10px] text-gray-600">12/10/2020 - 12/10/2024</div>
+                      </div>
+                    </div>
+                  ) : s.title === "Education" ? (
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="text-[10px] font-bold text-black">Oxford university</p>
+                          <p className="text-[10px] text-gray-600">Masters - Computer science</p>
+                        </div>
+                        <div className="text-[10px] text-gray-600">2021</div>
+                      </div>
+
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="text-[10px] font-bold text-black">Oxford university</p>
+                          <p className="text-[10px] text-gray-600">PHD - Computer science</p>
+                        </div>
+                        <div className="text-[10px] text-gray-600">2023</div>
+                      </div>
+                    </div>
+                  ) : s.title === "Areas of expertise" ? (
+                    <p className="font-inter font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1]">
+                      Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.
+                    </p>
+                  ) : s.title === "Language" ? (
+                    <div className="text-[10px] text-gray-700 space-y-1">
+                      <div>
+                        <p className="font-bold text-[10px]">English</p>
+                        <p className="text-[10px] text-gray-600">Fluent</p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-[10px]">Spanish</p>
+                        <p className="text-[10px] text-gray-600">Excellent</p>
+                      </div>
+                    </div>
                   ) : (
                     <p className="text-gray-300">&nbsp;</p>
                   )}
