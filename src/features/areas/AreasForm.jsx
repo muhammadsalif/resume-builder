@@ -2,9 +2,9 @@ import { useState } from "react";
 import nextIconGray from "../../assets/next.svg";
 import nextIconWhite from "../../assets/nextwhite.svg";
 
-export default function AboutForm() {
+export default function AreasForm() {
   const [description, setDescription] = useState(
-    "Creative and detail-oriented product designer passionate about crafting user-centered digital experiences that blend functionality with aesthetics."
+    "Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products."
   );
 
   const onChange = (e) => setDescription(e.target.value);
@@ -21,17 +21,15 @@ export default function AboutForm() {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6 pb-5">
         <div className="flex flex-col gap-1">
-          <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">About me</h2>
-          <p className="text-sm text-gray-500">Write a short description for your profile</p>
+          <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">Areas of expertise</h2>
+          <p className="text-sm text-gray-500">Fill details here</p>
         </div>
       </div>
 
-      {/* Editor Card */}
       <form onSubmit={onNext} className="space-y-6">
         <div className="bg-white border border-gray-200 rounded-lg">
           <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 rounded-t-lg">
             <div className="text-sm text-gray-600">Write Description</div>
-            {/* toolbar (visual only) */}
             <div className="flex items-center gap-2 mt-2">
               <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">B</button>
               <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">I</button>
@@ -77,30 +75,3 @@ export default function AboutForm() {
     </div>
   );
 }
-// import React from "react";
-// import { useResumeStore } from "../../store/resumeStore";
-
-// export default function AboutForm() {
-//   const { about, setAbout } = useResumeStore((state) => ({
-//     about: state.about,
-//     setAbout: state.setAbout,
-//   }));
-
-//   return (
-//     <div className="form-section">
-//       <h2>About</h2>
-//       <textarea
-//         placeholder="Write a short summary about yourself..."
-//         value={about}
-//         onChange={(e) => setAbout(e.target.value)}
-//         rows={6}
-//         style={{
-//           width: "100%",
-//           padding: "10px",
-//           borderRadius: "6px",
-//           border: "1px solid #ccc",
-//         }}
-//       />
-//     </div>
-//   );
-// }
