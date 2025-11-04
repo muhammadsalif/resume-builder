@@ -16,8 +16,8 @@ export default function Templates() {
         {/* Template Card 1 */}
         <div
           className={`flex flex-col items-center justify-center rounded shadow-sm hover:shadow-md transition-shadow duration-200 aspect-[3/4] cursor-pointer ${activeIndex === 1
-              ? "border-2 border-[rgba(0,49,139,1)]"
-              : "border border-gray-200"
+            ? "border-2 border-[rgba(0,49,139,1)]"
+            : "border border-gray-200"
             }`}
           onClick={() => setActiveIndex(1)}
         >
@@ -27,8 +27,8 @@ export default function Templates() {
         {/* Template Card 2 */}
         <div
           className={`flex flex-col items-center justify-center rounded shadow-sm hover:shadow-md transition-shadow duration-200 aspect-[3/4] cursor-pointer ${activeIndex === 2
-              ? "border-2 border-[rgba(0,49,139,1)]"
-              : "border border-gray-200"
+            ? "border-2 border-[rgba(0,49,139,1)]"
+            : "border border-gray-200"
             }`}
           onClick={() => setActiveIndex(2)}
         >
@@ -38,8 +38,8 @@ export default function Templates() {
         {/* Template Card 3 */}
         <div
           className={`flex flex-col items-center justify-center rounded shadow-sm hover:shadow-md transition-shadow duration-200 aspect-[3/4] cursor-pointer ${activeIndex === 3
-              ? "border-2 border-[rgba(0,49,139,1)]"
-              : "border border-gray-200"
+            ? "border-2 border-[rgba(0,49,139,1)]"
+            : "border border-gray-200"
             }`}
           onClick={() => setActiveIndex(3)}
         >
