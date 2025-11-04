@@ -1,12 +1,12 @@
 import Dot from "./Dot";
 import SocialLinkIcon from "../assets/sociallink.svg?react";
+import { useResumeStore } from "../store/resumeStore";
 
 export default function SocialLink() {
+  const social = useResumeStore((state) => state.social);
+
   return (
     <div className="relative flex flex-col gap-4">
-      {/* Vertical rail line */}
-      {/* <div className="absolute left-[7px] top-0 bottom-0 w-[2px] bg-gray-500" /> */}
-
       {/* References Header */}
       <div className="flex items-center gap-1 relative z-10">
         {/* Orange stretched bar */}
@@ -23,6 +23,49 @@ export default function SocialLink() {
 
       {/* Sub-items */}
       <div className="flex flex-col gap-4 mt-1">
+        {/* LinkedIn */}
+        {social.linkedin && (
+          <div className="flex items-start gap-1">
+            <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-bold text-white">LinkedIn</p>
+              <p className="text-sm text-gray-300">{social.linkedin}</p>
+            </div>
+          </div>
+        )}
+
+        {/* GitHub */}
+        {social.github && (
+          <div className="flex items-start gap-1">
+            <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-bold text-white">GitHub</p>
+              <p className="text-sm text-gray-300">{social.github}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Twitter */}
+        {social.twitter && (
+          <div className="flex items-start gap-1">
+            <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-bold text-white">Twitter</p>
+              <p className="text-sm text-gray-300">{social.twitter}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Instagram */}
+        {social.instagram && (
+          <div className="flex items-start gap-1">
+            <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-bold text-white">Instagram</p>
+              <p className="text-sm text-gray-300">{social.instagram}</p>
+            </div>
+          </div>
+        )}
         {/* linkedin */}
         <div className="flex items-start gap-1">
           <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />

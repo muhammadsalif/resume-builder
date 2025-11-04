@@ -1,12 +1,12 @@
 import Dot from "./Dot";
 import ReferencesIcon from "../assets/references.svg?react";
+import { useResumeStore } from "../store/resumeStore";
 
 export default function References() {
+  const references = useResumeStore((state) => state.references);
+
   return (
     <div className="relative flex flex-col gap-4">
-      {/* Vertical rail line */}
-      {/* <div className="absolute left-[7px] top-0 bottom-0 w-[2px] bg-gray-500" /> */}
-
       {/* References Header */}
       <div className="flex items-center gap-1 relative z-10">
         {/* Orange stretched bar */}
@@ -23,6 +23,20 @@ export default function References() {
 
       {/* Sub-items */}
       <div className="flex flex-col gap-4 mt-1">
+        {references.map((reference, index) => (
+          <div key={index} className="flex items-start gap-1">
+            <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-bold text-white">{reference.name}</p>
+                <p className="text-sm text-gray-400">({reference.title})</p>
+              </div>
+              <p className="text-sm text-gray-300">{reference.company}</p>
+              <p className="text-sm text-gray-300">{reference.email}</p>
+              <p className="text-sm text-gray-300">{reference.phone}</p>
+            </div>
+          </div>
+        ))}
         {/* reference 1 */}
         <div className="flex items-start gap-1">
           <Dot className="mt-[2px] mr-1 w-[6px] h-[6px] text-orange-500" />
