@@ -4,7 +4,7 @@ import Template2 from "../assets/cv-template-02.svg?react";
 import Template3 from "../assets/cv-template-03.svg?react";
 
 export default function Templates() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   return (
     <div className="p-5">

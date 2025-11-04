@@ -31,7 +31,7 @@ export default function ContactMe() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75a.75.75 0 01.75-.75h2.1a.75.75 0 01.7.48l1.3 3.27a.75.75 0 01-.17.79l-1.45 1.46a12.07 12.07 0 005.66 5.66l1.46-1.45a.75.75 0 01.79-.17l3.27 1.3a.75.75 0 01.48.7v2.1a.75.75 0 01-.75.75h-1.5C9.26 21 3 14.74 3 6.75v0z" />
             </svg>
           </div>
-          <p className="text-[5px] sm:text-[12px] text-white font-inter">+92 31 2024889</p>
+          <p className="text-[5px] sm:text-[10px] text-white font-inter">+92 31 2024889</p>
         </div>
 
         {/* Email */}
@@ -42,11 +42,11 @@ export default function ContactMe() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0L12 13.5 2.25 6.75" />
             </svg>
           </div>
-          <p className="text-[5px] sm:text-[12px] text-white font-inter">bobbrains@gmail.com</p>
+          <p className="text-[5px] sm:text-[10px] text-white font-inter">bobbrains@gmail.com</p>
         </div>
 
         {/* Address */}
-        <div className="flex items-start gap-1">
+        <div className="flex items-center gap-1">
           <Dot className="mr-1 w-[6px] h-[6px]" />
           <div className="w-4 h-4 rounded-full bg-white border border-gray-300 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -54,7 +54,7 @@ export default function ContactMe() {
               <circle cx="12" cy="10.5" r="1.5" fill="currentColor" />
             </svg>
           </div>
-          <div className="text-[5px] sm:text-[12px] text-white font-inter leading-tight">
+          <div className="text-[5px] sm:text-[10px] text-white font-inter leading-tight">
             <p>769 Prudence Street</p>
             <p>Lincoln Park, MI 48146</p>
           </div>
