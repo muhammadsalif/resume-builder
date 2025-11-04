@@ -42,7 +42,7 @@ export default function TemplatePreview({ withData = true }) {
         <div className="template-column relative overflow-hidden bg-transparent">
           {/* Background layers */}
           {/* <img src={blackShape} alt="" className="bg-blackshape" /> */}
-          <img src={orangeShape} alt="" className="bg-orangeshape" />
+          {/* <img src={orangeShape} alt="" className="bg-orangeshape" /> */}
 
           {/* Left rail content */}
           <div className="bg-black relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8">
@@ -78,7 +78,7 @@ export default function TemplatePreview({ withData = true }) {
                         item.label === "References" ? <References /> :
                           <SocialLink />
                     }
-                    <DottedDivider />
+                    {(i != items.length - 1) && <DottedDivider />}
                   </div>
                 ))}
 
