@@ -1,6 +1,6 @@
 import { useState } from "react";
-import nextIconGray from "../../assets/next.svg";
-import nextIconWhite from "../../assets/nextwhite.svg";
+import nextIconGray from "../../../../../assets/next.svg";
+import nextIconWhite from "../../../../../assets/nextwhite.svg";
 
 const emptyLanguage = () => ({ language: "", level: "" });
 
