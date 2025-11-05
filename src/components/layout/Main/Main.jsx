@@ -1,10 +1,10 @@
-import { PersonalInfoForm } from "../Leftbar/sections/PersonalInfoForm";
-import { AboutForm } from "../Leftbar/sections/AboutForm";
-import { EducationForm } from "../Leftbar/sections/EducationForm";
-import { LanguageForm } from "../Leftbar/sections/LanguageForm";
-import { WorkExperienceForm } from "../Leftbar/sections/WorkExperienceForm";
-import { AreasForm } from "../Leftbar/sections/AreasForm";
-import { ReferencesForm } from "../Leftbar/sections/ReferencesForm";
+import { PersonalInfoForm } from "./sections/PersonalInfoForm";
+import { AboutForm } from "./sections/AboutForm";
+import { EducationForm } from "./sections/EducationForm";
+import { LanguageForm } from "./sections/LanguageForm";
+import { WorkExperienceForm } from "./sections/WorkExperienceForm";
+import { AreasForm } from "./sections/AreasForm";
+import { ReferencesForm } from "./sections/ReferencesForm";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Main = () => {
