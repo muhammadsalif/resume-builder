@@ -1,7 +1,7 @@
-import { User as UserCircleIcon } from "lucide-react";
 import { Splitter } from "../../../../common";
 import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
+import UserCircleIcon from "../../../../../assets/nextwhite.svg";
 import { useResumeStore } from "../../../../../store/resumeStore";
 
 export default function PersonalInfoForm() {
