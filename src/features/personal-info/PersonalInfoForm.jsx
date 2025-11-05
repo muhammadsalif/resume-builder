@@ -1,5 +1,5 @@
 import { User as UserCircleIcon } from "lucide-react";
-import Splitter from "../../components/Splitter";
+import { Splitter } from "../../components/common";
 import nextIconGray from "../../assets/next.svg";
 import nextIconWhite from "../../assets/nextwhite.svg";
 import { useResumeStore } from "../../store/resumeStore";

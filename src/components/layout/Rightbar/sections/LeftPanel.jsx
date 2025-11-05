@@ -1,11 +1,11 @@
-import avatarPlaceholder from "../assets/avatarbg.svg";
-import ContactMeIcon from "../assets/contactme.svg?react";
-import ReferencesResume from "../assets/referencesresume.svg?react";
-import SocialLinkIcon from "../assets/sociallink.svg?react";
-import DottedDivider from "../components/DottedDivider";
-import ContactMe from "../components/ContactMe";
-import References from "../components/References";
-import SocialLink from "../components/SocialLink";
+import avatarPlaceholder from "../../../../assets/avatarbg.svg";
+import ContactMeIcon from "../../../../assets/contactme.svg?react";
+import ReferencesResume from "../../../../assets/referencesresume.svg?react";
+import SocialLinkIcon from "../../../../assets/sociallink.svg?react";
+import { DottedDivider } from "../../../common";
+import ContactMe from "./ContactMe";
+import References from "./References";
+import SocialLink from "./SocialLink";
 
 const LeftPanel = () => {
   const items = [

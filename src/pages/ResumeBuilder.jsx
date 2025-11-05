@@ -1,8 +1,7 @@
-import React from "react";
-import Leftbar from "../components/Leftbar";
-import Main from "../components/Main";
-import Rightbar from "../components/Rightbar";
-import Header from "../components/Header";
+import { Leftbar } from "../components/layout/Leftbar";
+import { Main } from "../components/layout/Main";
+import { Rightbar } from "../components/layout/Rightbar";
+import { Header } from "../components/layout/Header";
 import "./resumeBuilder.css";
 
 export default function ResumeBuilder() {

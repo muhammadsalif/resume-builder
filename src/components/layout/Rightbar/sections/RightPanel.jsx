@@ -1,10 +1,10 @@
-import Dot from "./Dot";
-import { useResumeStore } from "../store/resumeStore";
+import { Dot } from "../../../common";
+import { useResumeStore } from "../../../../store/resumeStore";
 
 function RightPanel() {
   const personalInfo = useResumeStore((state) => state.personalInfo);
   const about = useResumeStore((state) => state.about);
-  
+
   const sections = [
     { title: "About me" },
     { title: "Work Experience" },

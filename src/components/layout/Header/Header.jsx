@@ -1,9 +1,8 @@
 import React from "react";
-import infoIcon from "../assets/info.svg";
-import caretIcon from "../assets/caret.svg";
-import gearIcon from "../assets/gear.svg";
-import avatar from "../assets/avatar.png";
-import { Settings } from "lucide-react";
+import infoIcon from "../../../assets/info.svg";
+import caretIcon from "../../../assets/caret.svg";
+import gearIcon from "../../../assets/gear.svg";
+import avatar from "../../../assets/avatar.png";
 
 export default function Header() {
   return (

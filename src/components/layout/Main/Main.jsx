@@ -1,10 +1,10 @@
-import PersonalInfoForm from "../features/personal-info/PersonalInfoForm";
-import AboutForm from "../features/about/AboutForm";
-import EducationForm from "../features/education/EducationForm";
-import LanguageForm from "../features/language/LanguageForm";
-import WorkExperienceForm from "../features/work-experience/WorkExperienceForm";
-import AreasForm from "../features/areas/AreasForm";
-import ReferencesForm from "../features/references/ReferencesForm";
+import PersonalInfoForm from "../../../features/personal-info/PersonalInfoForm";
+import AboutForm from "../../../features/about/AboutForm";
+import EducationForm from "../../../features/education/EducationForm";
+import LanguageForm from "../../../features/language/LanguageForm";
+import WorkExperienceForm from "../../../features/work-experience/WorkExperienceForm";
+import AreasForm from "../../../features/areas/AreasForm";
+import ReferencesForm from "../../../features/references/ReferencesForm";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Main = () => {

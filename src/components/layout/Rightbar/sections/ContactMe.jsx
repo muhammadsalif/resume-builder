@@ -1,5 +1,5 @@
-import Dot from "./Dot";
-import ContactMeIcon from "../assets/contactme.svg?react";
+import { Dot } from "../../../common";
+import ContactMeIcon from "../../../../assets/contactme.svg?react";
 
 export default function ContactMe() {
   return (

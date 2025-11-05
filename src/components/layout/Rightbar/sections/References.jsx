@@ -1,5 +1,5 @@
-import Dot from "./Dot";
-import ReferencesIcon from "../assets/references.svg?react";
+import { Dot } from "../../../common";
+import ReferencesIcon from "../../../../assets/references.svg?react";
 
 export default function References() {
   return (

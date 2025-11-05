@@ -1,13 +1,11 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-
-import PersonalInfoIcon from "../assets/personalinfo.svg?react";
-import AboutMeIcon from "../assets/aboutme.svg?react";
-import EducationIcon from "../assets/education.svg?react";
-import LanguageIcon from "../assets/language.svg?react";
-import WorkExperienceIcon from "../assets/workexperience.svg?react";
-import AreasofExpertiseIcon from "../assets/areasofexpertise.svg?react";
-import ReferencesIcon from "../assets/references.svg?react";
+import PersonalInfoIcon from "../../../assets/personalinfo.svg?react";
+import AboutMeIcon from "../../../assets/aboutme.svg?react";
+import EducationIcon from "../../../assets/education.svg?react";
+import LanguageIcon from "../../../assets/language.svg?react";
+import WorkExperienceIcon from "../../../assets/workexperience.svg?react";
+import AreasofExpertiseIcon from "../../../assets/areasofexpertise.svg?react";
+import ReferencesIcon from "../../../assets/references.svg?react";
 
 const Leftbar = () => {
   const items = [

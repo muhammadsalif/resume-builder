@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Template1 from "../assets/cv-template-01.svg?react";
-import Template2 from "../assets/cv-template-02.svg?react";
-import Template3 from "../assets/cv-template-03.svg?react";
+import Template1 from "../../../../assets/cv-template-01.svg?react";
+import Template2 from "../../../../assets/cv-template-02.svg?react";
+import Template3 from "../../../../assets/cv-template-03.svg?react";
 
 export default function Templates() {
   const [activeIndex, setActiveIndex] = useState(1);

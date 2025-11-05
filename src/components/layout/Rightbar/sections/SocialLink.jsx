@@ -1,5 +1,5 @@
-import Dot from "./Dot";
-import SocialLinkIcon from "../assets/sociallink.svg?react";
+import { Dot } from "../../../common";
+import SocialLinkIcon from "../../../../assets/sociallink.svg?react";
 
 export default function SocialLink() {
   return (

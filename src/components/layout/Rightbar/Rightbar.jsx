@@ -1,5 +1,5 @@
-import TemplatePreview from "../components/TemplatePreview";
-import Templates from "../components/Templates";
+import TemplatePreview from "./sections/TemplatePreview";
+import Templates from "./sections/Templates";
 
 const Rightbar = () => {
   return (
