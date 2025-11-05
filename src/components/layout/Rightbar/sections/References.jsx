@@ -17,8 +17,8 @@ export default function References() {
           <ReferencesIcon className="w-3.5 h-3.5 text-black" />
         </div>
 
-        {/* Heading */}
-        <h3 className="text-sm sm:text-base font-bold text-white font-inter">References</h3>
+  {/* Heading */}
+  <h3 className="text-sm sm:text-base font-bold text-white">References</h3>
       </div>
 
       {/* Sub-items */}
@@ -29,20 +29,20 @@ export default function References() {
           <div className="flex flex-col gap-1">
             {/* name + designation */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">Darwin B. Magana</p>
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">(Manager)</p>
+              <p className="text-[5px] sm:text-[10px] text-white">Darwin B. Magana</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">(Manager)</p>
             </div>
 
             {/* phone number */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">Phone:</p>
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">+1 234 567 8901</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">Phone:</p>
+              <p className="text-[5px] sm:text-[10px] text-white">+1 234 567 8901</p>
             </div>
 
             {/* email */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">Email:</p>
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">darwin.magana@example.com</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">Email:</p>
+              <p className="text-[5px] sm:text-[10px] text-white">darwin.magana@example.com</p>
             </div>
           </div>
         </div>
@@ -53,20 +53,20 @@ export default function References() {
           <div className="flex flex-col gap-1">
             {/* name + designation */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">Robert J. Belvin</p>
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">(Manager)</p>
+              <p className="text-[5px] sm:text-[10px] text-white">Robert J. Belvin</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">(Manager)</p>
             </div>
 
             {/* phone number */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">Phone:</p>
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">+1 234 567 8901</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">Phone:</p>
+              <p className="text-[5px] sm:text-[10px] text-white">+1 234 567 8901</p>
             </div>
 
             {/* email */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1] font-inter">Email:</p>
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">darwin.magana@example.com</p>
+              <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">Email:</p>
+              <p className="text-[5px] sm:text-[10px] text-white">darwin.magana@example.com</p>
             </div>
           </div>
         </div>

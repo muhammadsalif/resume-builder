@@ -17,8 +17,8 @@ export default function SocialLink() {
           <SocialLinkIcon className="w-3.5 h-3.5 text-black" />
         </div>
 
-        {/* Heading */}
-        <h3 className="text-sm sm:text-base font-bold text-white font-inter">Social link</h3>
+  {/* Heading */}
+  <h3 className="text-sm sm:text-base font-bold text-white">Social link</h3>
       </div>
 
       {/* Sub-items */}
@@ -29,12 +29,12 @@ export default function SocialLink() {
           <div className="flex flex-col gap-1">
             {/* web */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">LinkedIn URL</p>
+              <p className="text-[5px] sm:text-[10px] text-white">LinkedIn URL</p>
             </div>
 
             {/* url */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">www.linkedin.com/in/bobbrains</p>
+              <p className="text-[5px] sm:text-[10px] text-white">www.linkedin.com/in/bobbrains</p>
             </div>
           </div>
         </div>
@@ -45,12 +45,12 @@ export default function SocialLink() {
           <div className="flex flex-col gap-1">
             {/* web */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">Indeed URL</p>
+              <p className="text-[5px] sm:text-[10px] text-white">Indeed URL</p>
             </div>
 
             {/* url */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">www.indeed.com/in/bobbrains</p>
+              <p className="text-[5px] sm:text-[10px] text-white">www.indeed.com/in/bobbrains</p>
             </div>
           </div>
         </div>
@@ -61,12 +61,12 @@ export default function SocialLink() {
           <div className="flex flex-col gap-1">
             {/* web */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">Behance URL</p>
+              <p className="text-[5px] sm:text-[10px] text-white">Behance URL</p>
             </div>
 
             {/* url */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">www.behance.com/in/bobbrains</p>
+              <p className="text-[5px] sm:text-[10px] text-white">www.behance.com/in/bobbrains</p>
             </div>
           </div>
         </div>
@@ -77,12 +77,12 @@ export default function SocialLink() {
           <div className="flex flex-col gap-1">
             {/* web */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">Website URL</p>
+              <p className="text-[5px] sm:text-[10px] text-white">Website URL</p>
             </div>
 
             {/* url */}
             <div className="flex gap-1">
-              <p className="text-[5px] sm:text-[10px] text-white font-inter">www.bobbrains.com</p>
+              <p className="text-[5px] sm:text-[10px] text-white">www.bobbrains.com</p>
             </div>
           </div>
         </div>
