@@ -1,7 +1,7 @@
 import { Splitter } from "../../../../common";
 import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
-import UserCircleIcon from "../../../../../assets/nextwhite.svg";
+import userCircleIcon from "../../../../../assets/nextwhite.svg";
 import { useResumeStore } from "../../../../../store/resumeStore";
 
 export default function PersonalInfoForm() {
@@ -69,7 +69,7 @@ export default function PersonalInfoForm() {
               className="w-full h-full object-cover rounded-full"
             />
           ) : (
-            <UserCircleIcon className="w-16 h-16 text-gray-400" />
+            <img src={userCircleIcon} alt="user" />
           )}
         </div>
 
