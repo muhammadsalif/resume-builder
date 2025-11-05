@@ -25,15 +25,15 @@ export const useResumeStore = create()(
   persist(
     (set) => ({
       ...initialState,
-      
-      setPersonalInfo: (data) => 
+
+      setPersonalInfo: (data) =>
         set((state) => ({
           personalInfo: {
             ...state.personalInfo,
             ...data
           }
         })),
-        
+
       setPhoto: (photoUrl) =>
         set((state) => ({
           personalInfo: {
@@ -43,7 +43,7 @@ export const useResumeStore = create()(
         })),
 
       setAbout: (text) => set({ about: text }),
-      
+
       reset: () => set(initialState)
     }),
     {
