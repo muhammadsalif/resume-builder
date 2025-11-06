@@ -25,7 +25,7 @@ const LeftPanel = () => {
       <div className="relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8 md:pb-4">
         {/* Avatar */}
         <div className="mb-6">
-          <div className="w-24 h-24 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
+          <div className="w-24 h-24 overflow-hidden">
             <img
               src={avatarPlaceholder}
               alt="avatar"
