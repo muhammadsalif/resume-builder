@@ -49,7 +49,7 @@ const LeftPanel = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline vertical line */}
-          <div className="absolute left-[2px] top-0 bottom-0 w-[2px] bg-white/30 z-[1]" />
+          <div className="absolute left-[2px] sm:left-[2px] md:left-[2px] top-0 bottom-0 w-[1.5px] sm:w-[2px] bg-white/30 z-[1]" />
           <div className="relative z-[2] space-y-1">
             {items.map((item, i) => (
               <div key={i} className="flex flex-col gap-1 relative">
