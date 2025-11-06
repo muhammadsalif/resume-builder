@@ -1,4 +1,6 @@
-import avatarPlaceholder from "../../../../assets/avatarbg.svg";
+import avatarBackground from "../../../../assets/avatarbg.svg";
+import userPic from "../../../../assets/avatar.png";
+
 import ContactMeIcon from "../../../../assets/contactme.svg?react";
 import ReferencesResume from "../../../../assets/referencesresume.svg?react";
 import SocialLinkIcon from "../../../../assets/sociallink.svg?react";
@@ -24,15 +26,25 @@ const LeftPanel = () => {
       {/* Left rail content */}
       <div className="relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8 md:pb-4">
         {/* Avatar */}
-        <div className="mb-6">
-          <div className="w-24 h-24 overflow-hidden">
+        <div className="mb-6 flex justify-center">
+          <div className="relative aspect-square w-24 sm:w-32 md:w-36 mx-auto">
+
+            {/* Background Image / Frame */}
             <img
-              src={avatarPlaceholder}
-              alt="avatar"
-              className="w-full h-full object-cover"
+              src={avatarBackground}
+              alt="avatar-frame"
+              className="absolute inset-0 w-full h-full object-contain z-[1] pointer-events-none"
+            />
+
+            {/* User Image */}
+            <img
+              src={userPic}
+              alt="user-avatar"
+              className="absolute inset-0 w-full h-full object-cover rounded-full z-[2]"
             />
           </div>
         </div>
+
 
         {/* Timeline */}
         <div className="relative">
