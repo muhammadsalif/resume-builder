@@ -10,7 +10,26 @@ export default function PersonalInfoForm() {
   const setPhoto = useResumeStore((state) => state.setPhoto);
 
   const onChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    if (name !== "phone") {
+      setPersonalInfo({ [name]: value });
+      return;
+    }
+    // Step 1: Remove anything that is not digit, +, or -
+    value = value.replace(/[^+\d-]/g, "");
+
+    // Step 2: Allow only ONE leading + (remove any other +)
+    value = value.replace(/(?!^\+)\+/g, "");
+    // Step 3: Allow only TWO hyphens in the entire string
+    const hyphens = value.match(/-/g);
+    if (hyphens && hyphens.length > 2) {
+      // remove extra hyphens beyond the 2nd one
+      value = value.replace(/-/g, (match, offset, str) =>
+        str.indexOf(match) === offset || str.indexOf(match, offset + 2) === offset
+          ? match
+          : ""
+      );
+    }
     setPersonalInfo({ [name]: value });
   };
 
@@ -152,6 +171,7 @@ export default function PersonalInfoForm() {
               id="email"
               name="email"
               type="email"
+              maxLength={30}
               value={personalInfo.email}
               onChange={onChange}
               placeholder="e.g john@email.com"
@@ -170,6 +190,7 @@ export default function PersonalInfoForm() {
               id="phone"
               name="phone"
               type="tel"
+              maxLength={15}
               value={personalInfo.phone}
               onChange={onChange}
               placeholder="e.g +1 234 567 890"
@@ -190,6 +211,7 @@ export default function PersonalInfoForm() {
           <textarea
             id="address"
             name="address"
+            maxLength={70}
             value={personalInfo.address}
             onChange={onChange}
             placeholder="e.g 1234 Elm Street, Apt 2B"
