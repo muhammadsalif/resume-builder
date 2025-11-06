@@ -16,6 +16,20 @@ const initialState = {
   },
   about: "",
   workExperience: [],
+  references: [
+    // {
+    //   name: "Darwin B. Magana",
+    //   designation: "Manager",
+    //   phone: "+1 234 567 8901",
+    //   email: "darwin.magana@example.com"
+    // },
+    // {
+    //   name: "Robert J. Belvin",
+    //   designation: "Manager",
+    //   phone: "+1 987 654 3210",
+    //   email: "robert.belvin@example.com"
+    // }
+  ],
   education: [],
   languages: [],
   expertise: []
