@@ -35,10 +35,10 @@ const Leftbar = () => {
             to={item.path}
             className={({ isActive }) =>
               `flex flex-col justify-center items-center rounded-xl gap-2 transition-all
-                h-[98px] text-center text-sm font-medium
+                  h-[98px] text-center text-sm font-medium
                ${isActive ? "active-gradient text-blue-800" :
                 "hover:bg-gray-100 border-gray-200 text-gray-700"
-              }`
+                }`
             }
           >
             {item.icon}

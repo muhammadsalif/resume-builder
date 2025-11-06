@@ -1,6 +1,5 @@
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
-import "./templatePreview.css";
 
 export default function TemplatePreview() {
   return (

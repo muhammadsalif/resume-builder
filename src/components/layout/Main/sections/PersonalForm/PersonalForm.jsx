@@ -55,19 +55,19 @@ const PersonalForm = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <input name="fullName" value={form.fullName} onChange={handleChange} placeholder="Full name *" className="input" />
-          <input name="title" value={form.title} onChange={handleChange} placeholder="Title *" className="input" />
-          <input name="email" value={form.email} onChange={handleChange} placeholder="Email address *" className="input" />
-          <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone number *" className="input" />
+          <input name="fullName" value={form.fullName} onChange={handleChange} placeholder="Full name *" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="title" value={form.title} onChange={handleChange} placeholder="Title *" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="email" value={form.email} onChange={handleChange} placeholder="Email address *" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone number *" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
         </div>
 
-        <input name="address" value={form.address} onChange={handleChange} placeholder="Address *" className="input" />
+        <input name="address" value={form.address} onChange={handleChange} placeholder="Address *" className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none" />
 
         <div className="grid grid-cols-2 gap-4">
-          <input name="linkedin" value={form.linkedin} onChange={handleChange} placeholder="LinkedIn URL (optional)" className="input" />
-          <input name="indeed" value={form.indeed} onChange={handleChange} placeholder="Indeed URL (optional)" className="input" />
-          <input name="behance" value={form.behance} onChange={handleChange} placeholder="Behance URL (optional)" className="input" />
-          <input name="website" value={form.website} onChange={handleChange} placeholder="Website URL (optional)" className="input" />
+          <input name="linkedin" value={form.linkedin} onChange={handleChange} placeholder="LinkedIn URL (optional)" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="indeed" value={form.indeed} onChange={handleChange} placeholder="Indeed URL (optional)" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="behance" value={form.behance} onChange={handleChange} placeholder="Behance URL (optional)" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
+          <input name="website" value={form.website} onChange={handleChange} placeholder="Website URL (optional)" className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none w-full" />
         </div>
       </div>
     </div>
