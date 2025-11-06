@@ -2,6 +2,8 @@ import avatarPlaceholder from "../../../../assets/avatarbg.svg";
 import ContactMeIcon from "../../../../assets/contactme.svg?react";
 import ReferencesResume from "../../../../assets/referencesresume.svg?react";
 import SocialLinkIcon from "../../../../assets/sociallink.svg?react";
+import blackShape from "../../../../assets/blackshape.svg";
+import orangeShape from "../../../../assets/orangeshape.svg";
 import { DottedDivider } from "../../../common";
 import ContactMe from "./ContactMe";
 import References from "./References";
@@ -16,11 +18,11 @@ const LeftPanel = () => {
   return (
     <div className="relative overflow-hidden bg-transparent">
       {/* Background layers */}
-      {/* <img src={blackShape} alt="" className="bg-blackshape" /> */}
-      {/* <img src={orangeShape} alt="" className="bg-orangeshape" /> */}
+      <img src={blackShape} alt="" className="absolute inset-0 w-full h-full object-cover z-10" />
+      <img src={orangeShape} alt="" className="absolute top-0 right-0 w-auto h-auto z-20" />
 
       {/* Left rail content */}
-      <div className="bg-black relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8 md:pb-4">
+      <div className="relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8 md:pb-4">
         {/* Avatar */}
         <div className="mb-6">
           <div className="w-24 h-24 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
