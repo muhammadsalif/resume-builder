@@ -48,18 +48,11 @@ const LeftPanel = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* <div className="timeline-line" /> */}
-
-          <div className="space-y-1">
+          {/* Timeline vertical line */}
+          <div className="absolute left-[2px] top-0 bottom-0 w-[2px] bg-white/30 z-[1]" />
+          <div className="relative z-[2] space-y-1">
             {items.map((item, i) => (
               <div key={i} className="flex flex-col gap-1 relative">
-                {/* Orange stretched dot for each section */}
-                {/* <div className="flex items-center gap-1">
-                      <div className="w-1 h-6 bg-orange-500 rounded-full flex-shrink-0" />
-                      <h3 className="text-[10px] font-bold leading-[100%] text-white">
-                        {item.label}
-                      </h3>
-                    </div> */}
 
                 {/* Contact Me Fields */}
                 {
