@@ -45,7 +45,7 @@ export default function References() {
               </div>
 
               {/* email */}
-              <div className={`flex gap-1 ${ref.phone ? "" : "invisible"}`}>
+              <div className={`flex gap-1 ${ref.email ? "" : "invisible"}`}>
                 <p className="text-[5px] sm:text-[10px] text-[#A1A1A1]">Email:</p>
                 <p className="text-[5px] sm:text-[10px] text-white">{ref.email}</p>
               </div>

@@ -48,6 +48,8 @@ export const useResumeStore = create()(
           }
         })),
 
+      setReferences: (refs) => set({ references: refs }),
+
       setPhoto: (photoUrl) =>
         set((state) => ({
           personalInfo: {
