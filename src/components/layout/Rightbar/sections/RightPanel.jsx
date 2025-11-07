@@ -3,7 +3,7 @@ import { useResumeStore } from "../../../../store/resumeStore";
 
 function RightPanel() {
   const personalInfo = useResumeStore((state) => state.personalInfo);
-  const _areasOfExpertise = useResumeStore((state) => state._areasOfExpertise);
+  const areasOfExpertiseDescription = useResumeStore((state) => state.areasOfExpertiseDescription);
   const about = useResumeStore((state) => state.about);
 
   const sections = [
@@ -122,7 +122,7 @@ function RightPanel() {
                       </div>
                     </div>
                   ) : s.title === "Areas of expertise" ? (
-                    <p className="clamp-3-lines font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">{_areasOfExpertise}</p>
+                    <p className="clamp-3-lines font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">{areasOfExpertiseDescription}</p>
                   ) : s.title === "Language" ? (
                     <div className="flex flex-col gap-4">
                       <div className="flex items-start gap-1">

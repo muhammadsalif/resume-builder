@@ -15,7 +15,7 @@ const initialState = {
     photo: null
   },
   about: "",
-  _areasOfExpertise: "Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.",
+  areasOfExpertiseDescription: "Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.",
   workExperience: [],
   references: [
     // {
@@ -60,7 +60,11 @@ export const useResumeStore = create()(
 
       setAbout: (text) => set({ about: text }),
 
-      set_AreasOfExpertise: (text) => set({ _areasOfExpertise: text }),
+      setAreasOfExpertise: (text) =>
+        set((state) => ({
+          ...state,
+          areasOfExpertiseDescription: text,
+        })),
 
       reset: () => set(initialState)
     }),
