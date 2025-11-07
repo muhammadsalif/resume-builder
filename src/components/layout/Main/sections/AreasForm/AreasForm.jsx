@@ -13,9 +13,8 @@ export default function AreasForm() {
     alert("Next Step (UI placeholder)");
   };
 
-  // const isValid = areasOfExpertiseDescription && areasOfExpertiseDescription.trim().length > 0;
-  const isValid = true; // Temporarily allow empty submission
-  console.log("areasOfExpertiseDescription in AreasForm:", areasOfExpertiseDescription);
+  const isValid = areasOfExpertiseDescription && areasOfExpertiseDescription.trim().length > 0;
+  // const isValid = true; // Temporarily allow empty submission
 
   return (
     <div className="flex flex-col w-full">
