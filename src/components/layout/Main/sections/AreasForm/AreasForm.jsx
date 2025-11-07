@@ -1,20 +1,20 @@
-import { useState } from "react";
 import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
+import { useResumeStore } from "../../../../../store/resumeStore";
 
 export default function AreasForm() {
-  const [description, setDescription] = useState(
-    "Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products."
-  );
+  const _areasOfExpertise = useResumeStore((state) => state._areasOfExpertise);
+  const set_AreasOfExpertise = useResumeStore((state) => state.set_AreasOfExpertise);
 
-  const onChange = (e) => setDescription(e.target.value);
+  const handleChange = (e) => set_AreasOfExpertise(e.target.value);
 
   const onNext = (e) => {
     e.preventDefault();
     alert("Next Step (UI placeholder)");
   };
 
-  const isValid = description && description.trim().length > 0;
+  const isValid = _areasOfExpertise && _areasOfExpertise.trim().length > 0;
+  console.log("_areasOfExpertise in AreasForm:", _areasOfExpertise);
 
   return (
     <div className="flex flex-col w-full">
@@ -41,8 +41,8 @@ export default function AreasForm() {
 
           <div className="p-4">
             <textarea
-              value={description}
-              onChange={onChange}
+              value={_areasOfExpertise}
+              onChange={handleChange}
               rows={8}
               className="w-full resize-none text-sm text-gray-700 placeholder-gray-400 border border-transparent focus:border-transparent focus:outline-none"
             />

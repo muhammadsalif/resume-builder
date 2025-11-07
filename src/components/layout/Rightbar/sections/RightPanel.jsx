@@ -3,6 +3,7 @@ import { useResumeStore } from "../../../../store/resumeStore";
 
 function RightPanel() {
   const personalInfo = useResumeStore((state) => state.personalInfo);
+  const _areasOfExpertise = useResumeStore((state) => state._areasOfExpertise);
   const about = useResumeStore((state) => state.about);
 
   const sections = [
@@ -15,6 +16,18 @@ function RightPanel() {
 
   return (
     <div className="relative overflow-hidden bg-transparent">
+      <style>
+        {`
+          .clamp-3-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+          }
+        `}
+      </style>
       {/* Right rail content */}
       <div className="bg-white relative z-30 flex flex-col items-start text-black h-full md:pl-4 md:pt-8 md:pb-4">
         {/* Header Section */}
@@ -109,9 +122,7 @@ function RightPanel() {
                       </div>
                     </div>
                   ) : s.title === "Areas of expertise" ? (
-                    <p className="font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">
-                      Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.
-                    </p>
+                    <p className="clamp-3-lines font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">{_areasOfExpertise}</p>
                   ) : s.title === "Language" ? (
                     <div className="flex flex-col gap-4">
                       <div className="flex items-start gap-1">
