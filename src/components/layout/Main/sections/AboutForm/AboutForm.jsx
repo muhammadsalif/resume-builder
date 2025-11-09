@@ -1,6 +1,6 @@
 import { useState } from "react";
 import nextIconGray from "../../../../../assets/next.svg";
-// import deleteIcon from "../../../../../assets/delete.svg";
+import deleteIcon from "../../../../../assets/delete.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
 
 export default function AboutForm() {
@@ -29,28 +29,42 @@ export default function AboutForm() {
 
       {/* Editor Card */}
       <form onSubmit={onNext} className="space-y-6">
-        <div className="bg-white border border-gray-200 rounded-lg">
-          <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 rounded-t-lg">
-            <div className="text-sm text-gray-600">Write Description</div>
+        <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <div className="px-4 py-3 border-b border-gray-200 bg-gray-50/80">
+            <div className="text-sm font-medium text-gray-700">Write Description</div>
             {/* toolbar (visual only) */}
-            <div className="flex items-center gap-2 mt-2">
-              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">B</button>
-              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">I</button>
-              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">U</button>
-              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">•</button>
-              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-200 rounded">1.</button>
+            <div className="flex items-center gap-2 mt-2.5">
+              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">B</button>
+              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">I</button>
+              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">U</button>
+              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">•</button>
+              <button type="button" className="px-2 py-1 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">1.</button>
             </div>
           </div>
 
-          <div className="p-4">
+          <div className="p-4 relative">
             <textarea
               value={description}
               onChange={onChange}
               rows={8}
-              className="w-full resize-none text-sm text-gray-700 placeholder-gray-400 border border-transparent focus:border-transparent focus:outline-none"
+              className="w-full resize-none text-sm text-gray-700 placeholder-gray-400 focus:outline-none min-h-[160px]"
+              placeholder="Write your professional summary here..."
             />
           </div>
           
+          <div className="flex justify-start items-center px-4 py-2 border-t border-gray-200">
+            <button 
+              type="button"
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors group"
+              onClick={() => setDescription("")}
+            >
+              <img
+                src={deleteIcon}
+                alt="delete"
+                className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity"
+              />
+            </button>
+          </div>
         </div>
         <div className="flex justify-end items-center">
           <div>
