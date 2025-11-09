@@ -19,30 +19,51 @@ const LeftPanel = () => {
   const { personalInfo } = useResumeStore();
 
   return (
-    <div className="relative overflow-hidden bg-transparent">
+    <div className="relative overflow-hidden bg-transparent min-h-screen">
       {/* Background layers */}
       <img src={blackShape} alt="" className="absolute inset-0 w-full h-full object-cover z-10" />
-      <img src={orangeShape} alt="" className="absolute top-0 right-0 w-auto h-auto z-20" />
+      <img src={orangeShape} alt="" className="absolute top-0 right-0 w-full md:w-auto h-auto z-20" />
 
       {/* Left rail content */}
-      <div className="relative z-30 flex flex-col items-start text-white h-full md:pl-4 md:pt-8 md:pb-4">
+      <div className="relative z-30 flex flex-col items-center text-white h-full w-full pt-8 pb-4">
         {/* Avatar */}
-        <div className="mb-6 flex justify-center">
-          <div className="relative aspect-square w-24 sm:w-32 md:w-36 mx-auto">
-            {personalInfo.photo ? <img
-              src={personalInfo.photo}
-              alt="user-avatar"
-              className="w-full h-full object-cover rounded-full rounded-bl-none border-4 border-white z-[2]"
-            /> :
+        <div className="mb-8 w-full flex justify-center items-center relative">
+          <div className="relative aspect-square w-24 sm:w-32 md:w-36 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full rounded-bl-none"></div>
+            {personalInfo.photo ? (
+              <img
+                src={personalInfo.photo}
+                alt="user-avatar"
+                className="w-full h-full object-cover rounded-full rounded-bl-none border-4 border-white shadow-lg z-[2]"
+              />
+            ) : (
               <img
                 src={avatarBackground}
                 alt="avatar-frame"
-                // className=" w-full h-full object-cover rounded-full rounded-bl-none border-4 border-gray-300 z-[2]"
                 className="w-full h-full object-contain z-[1] pointer-events-none"
               />
-            }
+            )}
           </div>
         </div>
+        {/* <div className="mb-8 w-full flex justify-center items-center relative">
+          <div className="relative aspect-square w-[30%] flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full rounded-bl-none"></div>
+            {personalInfo.photo ? (
+              <img
+                src={personalInfo.photo}
+                alt="user-avatar"
+                className="w-full h-full object-cover rounded-full rounded-bl-none border-4 border-white shadow-lg z-[2]"
+              />
+            ) : (
+              <img
+                src={avatarBackground}
+                alt="avatar-frame"
+                className="w-full h-full object-contain z-[1] pointer-events-none"
+              />
+            )}
+          </div>
+        </div> */}
+
         {/* Timeline */}
         <div className="relative">
           {/* Timeline vertical line */}
