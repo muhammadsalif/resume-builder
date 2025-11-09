@@ -18,7 +18,7 @@ export default function ResumeBuilder() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 bg-white border border-gray-200 rounded-xl flex flex-col p-6 shadow-sm">
+        <main className="flex-1 bg-white border border-gray-200 rounded-xl flex flex-col shadow-sm">
           <Main />
         </main>
 

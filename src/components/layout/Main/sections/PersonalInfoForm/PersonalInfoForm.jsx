@@ -1,7 +1,7 @@
 import { Splitter } from "../../../../common";
 import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
-import userCircleIcon from "../../../../../assets/nextwhite.svg";
+import avatar from "../../../../../assets/avatar.svg";
 import { useResumeStore } from "../../../../../store/resumeStore";
 
 export default function PersonalInfoForm() {
@@ -34,6 +34,7 @@ export default function PersonalInfoForm() {
   };
 
   const onPhotoUpload = (e) => {
+    console.log("clicked")
     const file = e.target.files[0];
     if (file) setPhoto(URL.createObjectURL(file));
   };
@@ -49,8 +50,8 @@ export default function PersonalInfoForm() {
       indeed: "",
       behance: "",
       website: "",
+      photo: null
     });
-    setPhoto(null);
   };
 
   const onNext = (e) => {
@@ -66,11 +67,11 @@ export default function PersonalInfoForm() {
     personalInfo.address;
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 mb-6 pb-5">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 mb-6 pb-5">
+        <div className="flex flex-col gap-1 w-full sm:w-auto mb-4 sm:mb-0">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 leading-tight">
             Personal info
           </h2>
           <p className="text-sm text-gray-500">Fill details here</p>
@@ -78,56 +79,58 @@ export default function PersonalInfoForm() {
       </div>
 
       {/* Upload Section */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-200 pb-5 mb-6">
+      <div className="flex flex-col sm:flex-row items-center gap-6 border-b border-gray-200 pb-6 mb-6">
         {/* Avatar */}
-        <div className="relative w-20 h-20 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center overflow-hidden">
+        <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center overflow-hidden flex-shrink-0">
           {personalInfo.photo ? (
             <img
               src={personalInfo.photo}
               alt="Uploaded"
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover"
             />
           ) : (
-            <img src={userCircleIcon} alt="user" />
+            <div className="w-full h-full flex items-center justify-center bg-gray-50">
+              <img src={avatar} alt="user" className="w-12 h-12 opacity-50" />
+            </div>
           )}
         </div>
 
         {/* Upload + Reset */}
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <label className="bg-[#00318B] text-white text-sm font-medium px-4 py-2 h-10 flex items-center justify-center rounded-lg cursor-pointer hover:bg-blue-900 transition">
+        <div className="flex flex-col gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <label className="inline-flex items-center justify-center px-4 py-2.5 bg-[#00318B] text-white text-sm font-medium rounded-lg cursor-pointer hover:bg-blue-900 transition-colors duration-200 ease-in-out min-w-[160px]">
               Upload your photo
               <input
                 type="file"
                 accept="image/*"
                 className="hidden"
-                onChange={onPhotoUpload}
+                onClick={onPhotoUpload}
               />
             </label>
             <button
               type="button"
               onClick={onReset}
-              className="px-4 py-2 h-10 flex items-center justify-center text-sm font-medium bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition cursor-pointer"
+              className="inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 ease-in-out min-w-[100px]"
             >
               Reset
             </button>
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400 text-center sm:text-left">
             Allowed JPG, GIF or PNG. Max size of 800K
           </p>
         </div>
       </div>
 
       {/* Form */}
-      <form onSubmit={onNext} className="space-y-6">
+      <form onSubmit={onNext} className="space-y-8">
         {/* Full Name & Title */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex flex-col space-y-2">
             <label
               htmlFor="fullName"
-              className="text-sm font-medium text-gray-700 mb-1"
+              className="text-sm font-medium text-gray-700 flex items-center"
             >
-              Full name <span className="text-red-500">*</span>
+              Full name <span className="text-red-500 ml-1">*</span>
             </label>
             <input
               id="fullName"
@@ -135,37 +138,37 @@ export default function PersonalInfoForm() {
               value={personalInfo.fullName}
               onChange={onChange}
               placeholder="e.g John Doe"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
+              className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
               required
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-2">
             <label
               htmlFor="title"
-              className="text-sm font-medium text-gray-700 mb-1"
+              className="text-sm font-medium text-gray-700 flex items-center"
             >
-              Title <span className="text-red-500">*</span>
+              Title <span className="text-red-500 ml-1">*</span>
             </label>
             <input
               id="title"
               name="title"
               value={personalInfo.title}
               onChange={onChange}
-              placeholder="Placeholder"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
+              placeholder="e.g Software Engineer"
+              className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
               required
             />
           </div>
         </div>
 
         {/* Email & Phone */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex flex-col space-y-2">
             <label
               htmlFor="email"
-              className="text-sm font-medium text-gray-700 mb-1"
+              className="text-sm font-medium text-gray-700 flex items-center"
             >
-              Email address <span className="text-red-500">*</span>
+              Email address <span className="text-red-500 ml-1">*</span>
             </label>
             <input
               id="email"
@@ -175,16 +178,16 @@ export default function PersonalInfoForm() {
               value={personalInfo.email}
               onChange={onChange}
               placeholder="e.g john@email.com"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
+              className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
               required
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-2">
             <label
               htmlFor="phone"
-              className="text-sm font-medium text-gray-700 mb-1"
+              className="text-sm font-medium text-gray-700 flex items-center"
             >
-              Phone number <span className="text-red-500">*</span>
+              Phone number <span className="text-red-500 ml-1">*</span>
             </label>
             <input
               id="phone"
@@ -194,19 +197,19 @@ export default function PersonalInfoForm() {
               value={personalInfo.phone}
               onChange={onChange}
               placeholder="e.g +1 234 567 890"
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
+              className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
               required
             />
           </div>
         </div>
 
         {/* Address */}
-        <div className="flex flex-col">
+        <div className="flex flex-col space-y-2">
           <label
             htmlFor="address"
-            className="text-sm font-medium text-gray-700 mb-1"
+            className="text-sm font-medium text-gray-700 flex items-center"
           >
-            Address <span className="text-red-500">*</span>
+            Address <span className="text-red-500 ml-1">*</span>
           </label>
           <textarea
             id="address"
@@ -216,72 +219,77 @@ export default function PersonalInfoForm() {
             onChange={onChange}
             placeholder="e.g 1234 Elm Street, Apt 2B"
             rows={3}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:ring-2 focus:ring-[#00318B] focus:outline-none"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out min-h-[100px]"
             required
           />
         </div>
 
-        <Splitter className="my-4" />
+        <Splitter className="my-6" />
 
-        {/* LinkedIn & Indeed */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {["linkedin", "indeed"].map((field) => (
-            <div key={field} className="flex flex-col">
-              <label
-                htmlFor={field}
-                className="text-sm font-medium text-gray-700 mb-1"
-              >
-                {field.charAt(0).toUpperCase() + field.slice(1)} URL (optional)
-              </label>
-              <input
-                id={field}
-                name={field}
-                value={personalInfo[field]}
-                onChange={onChange}
-                placeholder="www."
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Social Links */}
+        <div className="space-y-6">
+          {/* LinkedIn & Indeed */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {["linkedin", "indeed"].map((field) => (
+              <div key={field} className="flex flex-col space-y-2">
+                <label
+                  htmlFor={field}
+                  className="text-sm font-medium text-gray-700"
+                >
+                  {field.charAt(0).toUpperCase() + field.slice(1)} URL
+                  <span className="text-gray-400 text-xs ml-2">(optional)</span>
+                </label>
+                <input
+                  id={field}
+                  name={field}
+                  value={personalInfo[field]}
+                  onChange={onChange}
+                  placeholder="www."
+                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
 
-        {/* Behance & Website */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {["behance", "website"].map((field) => (
-            <div key={field} className="flex flex-col">
-              <label
-                htmlFor={field}
-                className="text-sm font-medium text-gray-700 mb-1"
-              >
-                {field.charAt(0).toUpperCase() + field.slice(1)} URL (optional)
-              </label>
-              <input
-                id={field}
-                name={field}
-                value={personalInfo[field]}
-                onChange={onChange}
-                placeholder="www."
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#00318B] focus:outline-none"
-              />
-            </div>
-          ))}
+          {/* Behance & Website */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {["behance", "website"].map((field) => (
+              <div key={field} className="flex flex-col space-y-2">
+                <label
+                  htmlFor={field}
+                  className="text-sm font-medium text-gray-700"
+                >
+                  {field.charAt(0).toUpperCase() + field.slice(1)} URL
+                  <span className="text-gray-400 text-xs ml-2">(optional)</span>
+                </label>
+                <input
+                  id={field}
+                  name={field}
+                  value={personalInfo[field]}
+                  onChange={onChange}
+                  placeholder="www."
+                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm focus:ring-2 focus:ring-[#00318B] focus:border-transparent transition-shadow duration-200 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Next Button */}
-        <div className="flex justify-end">
+        <div className="flex justify-end pt-4">
           <button
             type="submit"
             disabled={!isFormValid}
-            className={`flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none ${isFormValid
+            className={`flex items-center justify-center gap-2 px-6 h-11 text-sm font-medium rounded-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00318B] min-w-[120px] ${isFormValid
               ? "bg-[#00318B] text-white hover:bg-blue-900 cursor-pointer"
-              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              : "bg-gray-200 text-gray-400 cursor-not-allowed hover:bg-gray-200"
               }`}
           >
             Next
             <img
               src={isFormValid ? nextIconWhite : nextIconGray}
               alt="Next"
-              className="w-4 h-4"
+              className="w-4 h-4 transition-opacity duration-200"
             />
           </button>
         </div>
