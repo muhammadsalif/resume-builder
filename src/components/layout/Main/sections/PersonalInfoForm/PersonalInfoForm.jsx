@@ -92,11 +92,11 @@ export default function PersonalInfoForm() {
     personalInfo.address;
 
   return (
-    <div className="flex flex-col w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className="flex flex-col w-full max-w-4xl">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 mb-6 pb-5">
         <div className="flex flex-col gap-1 w-full sm:w-auto mb-4 sm:mb-0">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 leading-tight">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-800 leading-tight">
             Personal info
           </h2>
           <p className="text-sm text-gray-500">Fill details here</p>
