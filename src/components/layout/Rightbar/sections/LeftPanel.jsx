@@ -1,6 +1,4 @@
 import avatarBackground from "../../../../assets/avatarbg.svg";
-import userPic from "../../../../assets/avatar.png";
-
 import ContactMeIcon from "../../../../assets/contactme.svg?react";
 import ReferencesResume from "../../../../assets/referencesresume.svg?react";
 import SocialLinkIcon from "../../../../assets/sociallink.svg?react";
@@ -10,6 +8,7 @@ import { DottedDivider } from "../../../common";
 import ContactMe from "./ContactMe";
 import References from "./References";
 import SocialLink from "./SocialLink";
+import { useResumeStore } from "../../../../store/resumeStore";
 
 const LeftPanel = () => {
   const items = [
@@ -17,6 +16,8 @@ const LeftPanel = () => {
     { label: "References", icon: <ReferencesResume className="w-3 h-3" /> },
     { label: "Social link", icon: <SocialLinkIcon className="w-3 h-3" /> },
   ];
+  const { personalInfo } = useResumeStore();
+
   return (
     <div className="relative overflow-hidden bg-transparent">
       {/* Background layers */}
@@ -28,24 +29,20 @@ const LeftPanel = () => {
         {/* Avatar */}
         <div className="mb-6 flex justify-center">
           <div className="relative aspect-square w-24 sm:w-32 md:w-36 mx-auto">
-
-            {/* Background Image / Frame */}
-            <img
-              src={avatarBackground}
-              alt="avatar-frame"
-              className="absolute inset-0 w-full h-full object-contain z-[1] pointer-events-none"
-            />
-
-            {/* User Image */}
-            <img
-              src={userPic}
+            {personalInfo.photo ? <img
+              src={personalInfo.photo}
               alt="user-avatar"
-              className="absolute inset-0 w-full h-full object-cover rounded-full z-[2]"
-            />
+              className="w-full h-full object-cover rounded-full rounded-bl-none border-4 border-white z-[2]"
+            /> :
+              <img
+                src={avatarBackground}
+                alt="avatar-frame"
+                // className=" w-full h-full object-cover rounded-full rounded-bl-none border-4 border-gray-300 z-[2]"
+                className="w-full h-full object-contain z-[1] pointer-events-none"
+              />
+            }
           </div>
         </div>
-
-
         {/* Timeline */}
         <div className="relative">
           {/* Timeline vertical line */}

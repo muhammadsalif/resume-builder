@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Splitter } from "../../../../common";
 import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
@@ -33,10 +34,24 @@ export default function PersonalInfoForm() {
     setPersonalInfo({ [name]: value });
   };
 
+  const fileInputRef = useRef(null);
+
   const onPhotoUpload = (e) => {
-    console.log("clicked")
-    const file = e.target.files[0];
-    if (file) setPhoto(URL.createObjectURL(file));
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+
+    try {
+      if (personalInfo.photo && personalInfo.photo.startsWith && personalInfo.photo.startsWith("blob:")) {
+        URL.revokeObjectURL(personalInfo.photo);
+      }
+    } catch {
+      // ignore
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+    setPhoto(objectUrl);
+
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const onReset = () => {
@@ -52,6 +67,16 @@ export default function PersonalInfoForm() {
       website: "",
       photo: null
     });
+    // Ensure photo setter is cleared as well and revoke previous blob URL
+    try {
+      if (personalInfo.photo && personalInfo.photo.startsWith && personalInfo.photo.startsWith("blob:")) {
+        URL.revokeObjectURL(personalInfo.photo);
+      }
+    } catch {
+      // ignore
+    }
+    setPhoto(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const onNext = (e) => {
@@ -101,10 +126,11 @@ export default function PersonalInfoForm() {
             <label className="inline-flex items-center justify-center px-4 py-2.5 bg-[#00318B] text-white text-sm font-medium rounded-lg cursor-pointer hover:bg-blue-900 transition-colors duration-200 ease-in-out min-w-[160px]">
               Upload your photo
               <input
+                ref={fileInputRef}
                 type="file"
                 accept="image/*"
                 className="hidden"
-                onClick={onPhotoUpload}
+                onChange={onPhotoUpload}
               />
             </label>
             <button
