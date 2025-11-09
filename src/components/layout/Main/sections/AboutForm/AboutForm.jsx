@@ -1,21 +1,20 @@
-import { useState } from "react";
+import { useResumeStore } from "../../../../../store/resumeStore";
 import nextIconGray from "../../../../../assets/next.svg";
 import deleteIcon from "../../../../../assets/delete.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
 
 export default function AboutForm() {
-  const [description, setDescription] = useState(
-    "Creative and detail-oriented product designer passionate about crafting user-centered digital experiences that blend functionality with aesthetics."
-  );
+  const about = useResumeStore((state) => state.about);
+  const setAbout = useResumeStore((state) => state.setAbout);
 
-  const onChange = (e) => setDescription(e.target.value);
+  const onChange = (e) => setAbout(e.target.value);
 
   const onNext = (e) => {
     e.preventDefault();
     alert("Next Step (UI placeholder)");
   };
 
-  const isValid = description && description.trim().length > 0;
+  const isValid = about && about.trim().length > 0;
 
   return (
     <div className="flex flex-col w-full">
@@ -44,19 +43,19 @@ export default function AboutForm() {
 
           <div className="p-4 relative">
             <textarea
-              value={description}
+              value={about}
               onChange={onChange}
               rows={8}
-              className="w-full resize-none text-sm text-gray-700 placeholder-gray-400 focus:outline-none min-h-[160px]"
-              placeholder="Write your professional summary here..."
+              className="w-full max-w-full resize-none text-sm text-gray-700 placeholder-gray-400 focus:outline-none min-h-[160px] break-words overflow-auto"
+              placeholder="Write your message..."
             />
           </div>
-          
+
           <div className="flex justify-start items-center px-4 py-2 border-t border-gray-200">
-            <button 
+            <button
               type="button"
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors group"
-              onClick={() => setDescription("")}
+              onClick={() => setAbout("")}
             >
               <img
                 src={deleteIcon}

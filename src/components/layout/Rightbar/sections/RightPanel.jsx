@@ -25,6 +25,8 @@ function RightPanel() {
             overflow: hidden;
             text-overflow: ellipsis;
             word-break: break-word;
+            min-height: calc(1em * 3); /* Reserve space for up to 3 lines */
+            line-height: 1em; /* Make the height calculation accurate */
           }
         `}
       </style>
@@ -56,11 +58,11 @@ function RightPanel() {
                 </div>
 
                 {/* Section Content */}
-                <div className="relative flex flex-col gap-4 mt-1 w-[190px]">
+                <div className="relative flex flex-col gap-4 my-3 pr-3 w-[190px]">
                   {s.title === "About me" ? (
-                    <p className="font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4">
-                      {about || "Add your professional summary here"}
-                    </p>
+                    <p className={`clamp-3-lines font-normal not-italic text-[10px] tracking-[0%] text-[#A1A1A1] pl-4
+                    ${about ? "" : "invisible"}  
+                    `}>{about}</p>
                   ) : s.title === "Work Experience" ? (
                     <div className="flex flex-col gap-4">
                       {/* First work item */}
