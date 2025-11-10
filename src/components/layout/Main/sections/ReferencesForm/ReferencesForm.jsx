@@ -2,6 +2,7 @@ import nextIconGray from "../../../../../assets/next.svg";
 import nextIconWhite from "../../../../../assets/nextwhite.svg";
 import { Splitter } from "../../../../common";
 import { useResumeStore } from "../../../../../store/resumeStore";
+import deleteIcon from "../../../../../assets/delete.svg";
 
 const emptyRef = () => ({ name: "", designation: "", email: "", phone: "" });
 
@@ -93,7 +94,18 @@ export default function ReferencesForm() {
               <div className="flex justify-between items-center mt-4">
                 <div>
                   {references.length > 1 && (
-                    <button type="button" onClick={() => remove(idx)} className="text-sm text-red-500 cursor-pointer transition">Delete</button>
+                    <button
+                      type="button"
+                      onClick={() => remove(idx)}
+                      className="flex items-center gap-1 text-sm font-medium cursor-pointer transition text-[#E6483D] focus:outline-none hover:text-[#E6483D]"
+                    >
+                      <img
+                        src={deleteIcon}
+                        alt="delete"
+                        className="w-4 h-4 opacity-80 transition-opacity"
+                      />
+                      <span>Delete</span>
+                    </button>
                   )}
                 </div>
                 <div>
