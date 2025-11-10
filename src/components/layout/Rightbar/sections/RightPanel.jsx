@@ -5,6 +5,7 @@ function RightPanel() {
   const personalInfo = useResumeStore((state) => state.personalInfo);
   const areasOfExpertiseDescription = useResumeStore((state) => state.areasOfExpertiseDescription);
   const about = useResumeStore((state) => state.about);
+  const workExperience = useResumeStore((state) => state.workExperience);
 
   const sections = [
     { title: "About me" },
@@ -65,35 +66,52 @@ function RightPanel() {
                     `}>{about}</p>
                   ) : s.title === "Work Experience" ? (
                     <div className="flex flex-col gap-4">
-                      {/* First work item */}
-                      <div className="flex items-start gap-1">
-                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start w-full">
-                            <div className="flex flex-col gap-1 min-w-0">
-                              <p className="text-[10px] font-bold text-black truncate">UI/UX Designer</p>
-                              <p className="text-[10px] text-gray-600 truncate">Manager</p>
-                              <p className="text-[10px] text-gray-600 truncate">Associate manager</p>
+                      {workExperience.length > 0 ? workExperience.map((work, i) => (
+                        <div key={i} className="flex items-start gap-1">
+                          <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                          <div className="flex-1">
+                            <div className="flex justify-between items-start w-full">
+                              <div className="flex flex-col gap-1 min-w-0">
+                                <p className="text-[10px] font-bold text-black truncate">{work.jobTitle}</p>
+                                <p className="text-[10px] text-gray-600 truncate">{work.company}</p>
+                                <p className="text-[10px] text-gray-600 truncate">{work.designation}</p>
+                              </div>
+                              <div className="text-[10px] text-gray-600 ml-2 shrink-0">
+                                {work.from && new Date(work.from).toLocaleDateString('en-US', { 
+                                  month: '2-digit',
+                                  day: '2-digit', 
+                                  year: 'numeric'
+                                })}
+                                {" - "}
+                                {work.onwards ? "Present" : work.to && new Date(work.to).toLocaleDateString('en-US', {
+                                  month: '2-digit',
+                                  day: '2-digit',
+                                  year: 'numeric'
+                                })}
+                              </div>
                             </div>
-                            <div className="text-[10px] text-gray-600 ml-2 shrink-0">12/10/2018 - 12/10/2020</div>
                           </div>
                         </div>
-                      </div>
-
-                      {/* Second work item */}
-                      <div className="flex items-start gap-1">
-                        <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start w-full">
-                            <div className="flex flex-col gap-1 min-w-0">
-                              <p className="text-[10px] font-bold text-black truncate">Graphic Designer</p>
-                              <p className="text-[10px] text-gray-600 truncate">Creative Market / Chicago</p>
-                              <p className="text-[10px] text-gray-600 truncate">Manager</p>
+                      )) : (
+                        <div className="flex items-start gap-1">
+                          <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                          <div className="flex-1 invisible">
+                            <div className="flex justify-between items-start w-full">
+                              <div className="flex flex-col gap-1 min-w-0">
+                                <p className="text-[10px] font-bold text-black truncate">Placeholder</p>
+                              </div>
                             </div>
-                            <div className="text-[10px] text-gray-600 ml-2 shrink-0">12/10/2020 - 12/10/2024</div>
+                          </div>
+                          <Dot className="mt-[2px] mr-1 w-[6px] h-[6px]" />
+                          <div className="flex-1 invisible">
+                            <div className="flex justify-between items-start w-full">
+                              <div className="flex flex-col gap-1 min-w-0">
+                                <p className="text-[10px] font-bold text-black truncate">Placeholder</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   ) : s.title === "Education" ? (
                     <div className="flex flex-col gap-4">

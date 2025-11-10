@@ -16,7 +16,16 @@ const initialState = {
   },
   about: "",
   areasOfExpertiseDescription: "Expert in crafting user-centered digital experiences that combine aesthetics with functionality. Skilled in UX/UI design, prototyping, and design strategy to deliver impactful and seamless products.",
-  workExperience: [],
+  workExperience: [
+    // {
+    //   jobTitle: "UI/UX Designer",
+    //   designation: "Manager",
+    //   company: "Acme Tech",
+    //   from: "2023-01-01",
+    //   to: "2024-01-01",
+    //   onwards: false
+    // }
+  ],
   references: [
     // {
     //   name: "Darwin B. Magana",
@@ -49,6 +58,8 @@ export const useResumeStore = create()(
         })),
 
       setReferences: (refs) => set({ references: refs }),
+
+      setWorkExperience: (data) => set({ workExperience: data }),
 
       setPhoto: (photoUrl) =>
         set((state) => ({
